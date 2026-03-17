@@ -1,0 +1,60 @@
+[project]
+name = "stealth-browser"
+version = "0.1.0"
+description = "Stealth Selenium browser with anti-detection and fingerprint spoofing"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = ["selenium", "stealth", "browser", "automation", "anti-detection", "fingerprint"]
+authors = [
+    { name = "Auto", email = "auto@example.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "selenium>=4.27.0",
+    "babel>=2.12.0",
+]
+
+[project.optional-dependencies]
+patchright = ["patchright>=1.58.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/example/stealth-browser"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stealth_browser"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

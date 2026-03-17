@@ -1,0 +1,273 @@
+{
+  "timestamp": "2026-02-20T10:38:12.217793+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Apple, Apple M3)",
+    "cores": 15,
+    "memory": 64,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "rebrowser",
+      "url": "https://bot-detector.rebrowser.net/",
+      "timestamp": "2026-02-20T10:38:12.991045+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "\u26aa\ufe0f dummyFn": "2.029 ms",
+        "\u26aa\ufe0f sourceUrlLeak": "4.496 ms",
+        "\u26aa\ufe0f mainWorldExecution": "4.994 ms",
+        "\ud83d\udfe2 runtimeEnableLeak": "5.166 ms",
+        "\u26aa\ufe0f exposeFunctionLeak": "6.313 ms",
+        "\ud83d\udfe2 navigatorWebdriver": "7.263 ms",
+        "\ud83d\udfe2 viewport": "15.399 ms",
+        "\ud83d\udfe2 pwInitScripts": "17.472 ms",
+        "\ud83d\udfe2 bypassCsp": "35.231 ms",
+        "\ud83d\udfe2 useragent": "232.166 ms"
+      },
+      "duration_ms": 13929,
+      "page_text": "\ud83d\udd75\ufe0f rebrowser-bot-detector\nModern tests to detect automated browser behavior. See github repo for more details. How to properly run the tests?\nTest name\tTime since load\tNotes\n\u26aa\ufe0f dummyFn\t2.029 ms\tCall window.dummyFn() to test if you can access main world objects.\n\u26aa\ufe0f sourceUrlLeak\t4.496 ms\tCall document.getElementById('detections-json') to test sourceUrl leak.\n\u26aa\ufe0f mainWorldExecution\t4.994 ms\tCall document.getElementsByClassName('div') to trigger this test. If you did and the test wasn't triggered, then you're running it in an isolated world, which is safe and not detectable.\n\ud83d\udfe2 runtimeEnableLeak\t5.166 ms\tNo leak detected.\n\u26aa\ufe0f exposeFunctionLeak\t6.313 ms\tNo window.exposedFn. Use page.exposeFunction to trigger this test.\n\ud83d\udfe2 navigatorWebdriver\t7.263 ms\tNo webdriver presented.\n\ud83d\udfe2 viewport\t15.399 ms\tViewport is different from default values used in automation libraries.\n{\n  \"width\": 1680,\n  \"height\": 1050\n}\n\n\ud83d\udfe2 pwInitScripts\t17.472 ms\tNo window.__pwInitScripts detected.\n\ud83d\udfe2 bypassCsp\t35.231 ms\tContent Security Policy (CSP) is enabled, it's expected behavior.\n\ud83d\udfe2 useragent\t232.166 ms\tGoogle Chrome version is not higher than the latest stable release version which is fine.\n{\n  \"useragentVersionItems\": [\n    {\n      \"brand\": \"Chromium\",\n      \"version\": \"121.0.0.0\"\n    },\n    {\n      \"brand\": \"Google Chrome\",\n      \"version\": \"121.0.0.0\"\n    }\n  ],\n  \"latestStableRelease\": {\n    \"version\": \"145.0.7632.77\",\n    \"date\": \"2026-02-18T21:08:37.061Z\"\n  }\n}\nJSON\nSponsored by rebrowser.net \u2014 the ultimate stealth browser and scraping solution fueled by AI."
+    },
+    {
+      "name": "sannysoft",
+      "url": "https://bot.sannysoft.com/",
+      "timestamp": "2026-02-20T10:38:26.928156+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "User Agent (Old)": {
+          "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "WebDriver (New)": {
+          "value": "missing (passed)",
+          "passed": true
+        },
+        "WebDriver Advanced": {
+          "value": "passed",
+          "passed": true
+        },
+        "Chrome (New)": {
+          "value": "present (passed)",
+          "passed": true
+        },
+        "Permissions (New)": {
+          "value": "denied",
+          "passed": true
+        },
+        "Plugins Length (Old)": {
+          "value": "3",
+          "passed": true
+        },
+        "Plugins is of type PluginArray": {
+          "value": "passed",
+          "passed": true
+        },
+        "Languages (Old)": {
+          "value": "en-US,en",
+          "passed": true
+        },
+        "WebGL Vendor": {
+          "value": "Google Inc. (Apple)",
+          "passed": true
+        },
+        "WebGL Renderer": {
+          "value": "ANGLE (Apple, Apple M3)",
+          "passed": true
+        },
+        "Broken Image Dimensions": {
+          "value": "16x16",
+          "passed": true
+        },
+        "PHANTOM_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_PROPERTIES": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_ETSL": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_LANGUAGE": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WEBSOCKET": {
+          "value": "ok",
+          "passed": true
+        },
+        "MQ_SCREEN": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_OVERFLOW": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WINDOW_HEIGHT": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_CHROME_OBJ": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PERMISSIONS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PLUGINS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_IFRAME": {
+          "value": "FAIL",
+          "passed": false
+        },
+        "CHR_DEBUG_TOOLS": {
+          "value": "ok",
+          "passed": true
+        },
+        "SELENIUM_DRIVER": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_BATTERY": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_MEMORY": {
+          "value": "ok",
+          "passed": true
+        },
+        "TRANSPARENT_PIXEL": {
+          "value": "ok",
+          "passed": true
+        },
+        "SEQUENTUM": {
+          "value": "ok",
+          "passed": true
+        },
+        "VIDEO_CODECS": {
+          "value": "ok",
+          "passed": true
+        },
+        "navigator.cookieEnabled": {
+          "value": "document.write(navigator.cookieEnabled);\n            true",
+          "passed": true
+        },
+        "navigator.doNotTrack": {
+          "value": "document.write(navigator.doNotTrack);\n            null",
+          "passed": true
+        },
+        "navigator.msDoNotTrack": {
+          "value": "document.write(navigator.msDoNotTrack);\n            undefined",
+          "passed": true
+        },
+        "navigator.sendBeacon": {
+          "value": "document.write(navigator.sendBeacon());",
+          "passed": true
+        },
+        "navigator.userAgent": {
+          "value": "document.write(navigator.userAgent);\n            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "navigator.appName": {
+          "value": "document.write(navigator.appName);\n            Netscape",
+          "passed": true
+        },
+        "navigator.vendor": {
+          "value": "document.write(navigator.vendor);\n            Google Inc.",
+          "passed": true
+        },
+        "navigator.appCodeName": {
+          "value": "document.write(navigator.appCodeName);\n            Mozilla",
+          "passed": true
+        },
+        "navigator.getUserMedia": {
+          "value": "document.write(navigator.getUserMedia());",
+          "passed": true
+        },
+        "navigator.sayswho": {
+          "value": "document.write(navigator.sayswho);\n            undefined",
+          "passed": true
+        },
+        "navigator.javaEnabled": {
+          "value": "document.write(navigator.javaEnabled());\n            false",
+          "passed": true
+        },
+        "navigator.plugins": {
+          "value": "document.write(JSON.stringify(navigator.plugins));\n            {\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}",
+          "passed": true
+        },
+        "screen.width": {
+          "value": "document.write(screen.width);\n            1680",
+          "passed": true
+        },
+        "screen.height": {
+          "value": "document.write(screen.height);\n            1050",
+          "passed": true
+        },
+        "screen.colorDepth": {
+          "value": "document.write(screen.colorDepth);\n            24",
+          "passed": true
+        },
+        "navigator.language": {
+          "value": "document.write(navigator.language);\n            en-US",
+          "passed": true
+        },
+        "navigator.loadPurpose": {
+          "value": "document.write(navigator.loadPurpose);\n            undefined",
+          "passed": true
+        },
+        "navigator.platform": {
+          "value": "document.write(navigator.platform);\n            MacIntel",
+          "passed": true
+        },
+        "navigator.mediaDevices": {
+          "value": "audioinput:  id = videoinput:  id = audiooutput:  id =",
+          "passed": true
+        },
+        "navigator.getBattery details": {
+          "value": "Charging: falseLevel: 0.59",
+          "passed": true
+        },
+        "Canvas1": {
+          "value": "Hash: 395724467",
+          "passed": true
+        },
+        "Canvas2": {
+          "value": "Hash: 395724467",
+          "passed": true
+        },
+        "Canvas3 (iframe sandbox)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        },
+        "Canvas4 (iframe sandbox)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        },
+        "Canvas5 (iframe)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        }
+      },
+      "duration_ms": 4097,
+      "page_text": "Intoli.com tests + additions\nTest Name\tResult\nUser Agent\n(Old)\n\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\nWebDriver\n(New)\n\tmissing (passed)\nWebDriver Advanced\tpassed\nChrome\n(New)\n\tpresent (passed)\nPermissions\n(New)\n\tdenied\nPlugins Length\n(Old)\n\t3\nPlugins is of type PluginArray\tpassed\nLanguages\n(Old)\n\ten-US,en\nWebGL Vendor\tGoogle Inc. (Apple)\nWebGL Renderer\tANGLE (Apple, Apple M3)\nBroken Image Dimensions\t16x16\nFingerprint Scanner tests\nPHANTOM_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\"\n}\n\nPHANTOM_PROPERTIES\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false\n     ]\n}\n\nPHANTOM_ETSL\tok\t\n{\n     \"etsl\": 33\n}\n\nPHANTOM_LANGUAGE\tok\t\n{\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ]\n}\n\nPHANTOM_WEBSOCKET\tok\t\n{}\n\nMQ_SCREEN\tok\t\n{}\n\nPHANTOM_OVERFLOW\tok\t\n{\n     \"depth\": 8843,\n     \"errorMessage\": \"Maximum call stack size exceeded\",\n     \"errorName\": \"RangeError\",\n     \"errorStacklength\": 846\n}\n\nPHANTOM_WINDOW_HEIGHT\tok\t\n{\n     \"wInnerHeight\": 1050,\n     \"wOuterHeight\": 1140,\n     \"wOuterWidth\": 1680,\n     \"wInnerWidth\": 1680,\n     \"wScreenX\": 261,\n     \"wPageXOffset\": 0,\n     \"wPageYOffset\": 0,\n     \"cWidth\": 1664,\n     \"cHeight\": 1597,\n     \"sWidth\": 1680,\n     \"sHeight\": 1050,\n     \"sAvailWidth\": 1680,\n     \"sAvailHeight\": 1025,\n     \"sColorDepth\": 24,\n     \"sPixelDepth\": 24,\n     \"wDevicePixelRatio\": 1\n}\n\nHEADCHR_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\"\n}\n\nHEADCHR_CHROME_OBJ\tok\t\n{}\n\nHEADCHR_PERMISSIONS\tok\t\n{}\n\nHEADCHR_PLUGINS\tok\t\n{\n     \"plugins\": [\n          \"Chrome PDF Plugin::Portable Document Format::internal-pdf-viewer::__~~,~~,~~\",\n          \"Chrome PDF Viewer::::mhjfbmdgcfjbbpaeojofohoefgiehjai::__~~,~~,~~\",\n          \"Native Client::::internal-nacl-plugin::__~~,~~,~~\"\n     ]\n}\n\nHEADCHR_IFRAME\tFAIL\t\n{}\n\nCHR_DEBUG_TOOLS\tok\t\n{}\n\nSELENIUM_DRIVER\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false\n     ]\n}\n\nCHR_BATTERY\tok\t\n{}\n\nCHR_MEMORY\tok\t\n{}\n\nTRANSPARENT_PIXEL\tok\t\n{\n     \"0\": 0,\n     \"1\": 0,\n     \"2\": 0,\n     \"3\": 0\n}\n\nSEQUENTUM\tok\t\n{}\n\nVIDEO_CODECS\tok\t\n{\n     \"h264\": \"probably\"\n}\nSome details\nnavigator.cookieEnabled\ttrue\nnavigator.doNotTrack\tnull\nnavigator.msDoNotTrack\tundefined\nnavigator.sendBeacon\t\nnavigator.cookieEnabled\ttrue\nnavigator.userAgent\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\nnavigator.appName\tNetscape\nnavigator.vendor\tGoogle Inc.\nnavigator.appCodeName\tMozilla\nnavigator.getUserMedia\t\nnavigator.sayswho\tundefined\nnavigator.javaEnabled\tfalse\nnavigator.plugins\t{\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}\nscreen.width\t1680\nscreen.height\t1050\nscreen.colorDepth\t24\nnavigator.language\ten-US\nnavigator.loadPurpose\tundefined\nnavigator.platform\tMacIntel\nnavigator.mediaDevices\taudioinput: id =\nvideoinput: id =\naudiooutput: id =\n\nnavigator.getBattery details\tCharging: false\nLevel: 0.59\nCanvas1\t\nHash: 395724467\n\nCanvas2\t\nHash: 395724467\n\nCanvas3 (iframe sandbox)\t\nHash: -2016801316\n\nCanvas4 (iframe sandbox)\t\nHash: -2016801316\n\nCanvas5 (iframe)\t\nHash: -2016801316\nFp-collect info\n{\n     \"plugins\": [\n          \"Chrome PDF Plugin::Portable Document Format::internal-pdf-viewer::__~~,~~,~~\",\n          \"Chrome PDF Viewer::::mhjfbmdgcfjbbpaeojofohoefgiehjai::__~~,~~,~~\",\n          \"Native Client::::internal-nacl-plugin::__~~,~~,~~\"\n     ],\n     \"mimeTypes\": [\n          \"Portable Document Format~~application/pdf~~pdf\"\n     ],\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\",\n     \"platform\": \"MacIntel\",\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ],\n     \"screen\": {\n          \"wInnerHeight\": 1050,\n          \"wOuterHeight\": 1140,\n          \"wOuterWidth\": 1680,\n          \"wInnerWidth\": 1680,\n          \"wScreenX\": 261,\n          \"wPageXOffset\": 0,\n          \"wPageYOffset\": 0,\n          \"cWidth\": 1664,\n          \"cHeight\": 1597,\n          \"sWidth\": 1680,\n          \"sHeight\": 1050,\n          \"sAvailWidth\": 1680,\n          \"sAvailHeight\": 1025,\n          \"sColorDepth\": 24,\n          \"sPixelDepth\": 24,\n          \"wDevicePixelRatio\": 1\n     },\n     \"touchScreen\": [\n          0,\n          false,\n          false\n     ],\n     \"videoCard"
+    }
+  ]
+}

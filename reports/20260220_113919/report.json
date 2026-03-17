@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-02-20T18:39:19.182754+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+    "cores": 5,
+    "memory": 61,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "browserscan_bot",
+      "url": "https://www.browserscan.net/bot-detection",
+      "timestamp": "2026-02-20T18:39:19.983115+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 9570,
+      "page_text": "blog\nAntidetect Browser\nUtilities\nEN\nSign In\nHome\n>\nBot Detection\nTest Results:\nWebdriver\nUser-Agent\nCDP\nNavigator\nBrowser bot detection guide\n\nBrowserScan detects automated activities on scripts or browsers. It analyzes various browser properties to determine whether the browser environment is controlled by a robot. Various human-machine verification products such as Cloudflare Turnstile and Google reCAPTCHA include this aspect of detection, which is usually divided into three categories:\n\nNormal bots - usually bots belonging to well-known search engines (Google, Bing, Baidu). It crawls websites to create a searchable index of content. A good bot can also be a monitoring or uptime checking tool.\nMalicious bots - Usually automated tools like Selenium, Puppeteer, Playwright or anything that pretends to be a good search bot. It can take over accounts, submit spam, steal passwords, scrape data, waste resources, and more.Discord bots.\nNo bots detected - the visitor could be a human using a regular browser.\nAd\nIdentification and bot detection\n\nThe combination of fingerprinting and bot detection gives you a powerful tool to protect against online fraud and produces the best results when used together.\n\nWebDriver\nWebDriver Advance\nSelenium\nNightmareJS\nPhantomJS\nAwesomium\nCef\nCefSharp\nCoaches\nFMiner\nBorn\nPhantomas\nRhino\nWebdriverio\nHeadless Chrome\nChrome DevTools Protocol Detection\n\nDetectable use of developer tools to simulate browsers or control them via related developer protocols.\n\nCDP\nDev Tool\nNative Navigator\n\nDetect whether the Navigator is deceptive. Some browser plug-ins or robots will modify key attributes to achieve deception.\n\nWhat is webdriver\n\nWebDriver is a tool for automating browser operations. It provides a programming interface that allows developers to write scripts in various programming languages (such as Java, Python, C#, etc.) to automatically perform browser operations such as opening web pages, clicking buttons, filling out forms, etc.\n\nControl: WebDriver can control the browser and perform various user actions. For example, it can tell the browser to open a specific URL or click a button.\nInteraction: WebDriver can interact with web pages through the browser. For example, it can read the HTML source code of a web page, or inspect specific elements on the page.\nSimulation: WebDriver can simulate user actions. For example, it can simulate mouse clicks, keyboard input, and other operations.\n\nWebDriver is a W3C standard, which means that all major browsers (such as Chrome, Firefox, Safari, and Edge) provide support for WebDriver. Each browser has its own WebDriver implementation (for example, Chrome has ChromeDriver and Firefox has GeckoDriver), but they all follow the same set of APIs, which allows developers to control different browsers with the same set of code.\n\nWhat is webdriver and how it relates to Selenium, NightmareJS, PhantomJS, Awesomium, Cef, CefSharp, Coachjs, FMiner, Geb, Phantomas, Rhino, Webdriverio, Headless Chrome, etc.\nHow human-machine authentication like Cloudflare Turnstile, Google reCAPTCHA detect the operation of automated tools such as webdriver\nHow to avoid detection by human-machine verification system using WebDriver and other automation tools\nMore resources\nblog\nBrowser Fingerprint\nProxies\nAnti-detection Browser\nAffiliate Marketing\nPractical Tutorial\nPractical Tools\nSocial Media\nE-commerce\nPartners\nMore Tools\nMedia Devices\nKernel detection\nUserAgent Parse\nInternet Speed Test\nIP address lookup\nCookie Converter\nPort Scanner\nBot Detection\nPlugin Detection\nGet 2FA Code\nDNS Leak Test\nWebRTC leak Test\nHTTP2/SSL/TLS Test\nCurrency Converter\nClient Hints\nWebGPU Browser Report\nTime zone detection\nPassword Generator\nRelease Notes\n1.4.1.0\n\nCopyright\u00a9 BrowserScan | Privacy Policy"
+    }
+  ]
+}

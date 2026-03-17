@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-02-20T19:03:12.529448+00:00",
+  "headless": false,
+  "platform": null,
+  "config": {
+    "platform": "Win32",
+    "platform_key": "windows",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1920x1080",
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 630 Direct3D11 vs_5_0 ps_5_0)",
+    "cores": 7,
+    "memory": 9,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "fingerprint_botd",
+      "url": "https://demo.fingerprint.com/bot-firewall",
+      "timestamp": "2026-02-20T19:03:13.907361+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 7321,
+      "page_text": "Home\nPlayground\nUse cases\nRestart\nContact sales\nGet started\nBot Firewall Test\n\nIntegrate Fingerprint Bot Detection with your Web Application Firewall and dynamically block IP addresses linked to past bot visits.\n\nFingerprint Bot Detection allows you to identify sophisticated bots and headless browsers by collecting and analyzing browser signals. See our Web scraping demo for an example of protecting client-site content from bots. This demo goes a step further. It uses Bot Detection results to block previously recognized bots on their next visit completely \u2014 before they even reach your web page.\n\nSee on GitHub\nSee technical tutorial\nHow to use this demo\nUse a locally running instance of Playwright, Cypress, or another headless browser tool to visit the web scraping demo. See the demo tutorial for an example.\nYour headless browser will be recognized as a bot, and your IP address will be saved to the bot visit database displayed below.\nClick Block this IP to prevent the bot from loading the page at all going forward. For demo purposes, you are only allowed to block your own IP.\nTry visiting the web scraping demo again (either as a bot or using your regular browser).\nYour IP address is blocked from the page completely.\nNOTE\nFor the purposes of this demo, you can only block/unblock your own IP address (undefined). The block expires after one hour. The database of bot visits is cleared on every website update.\nSee related resources\nBots detected on Web scraping demo\nLoading \u23f3\nWe recommend reading the instructions before trying the demo!\nTimestamp \tRequest ID\tBot Type \tIP Address\tAction\nFeb 20 10:23 AM\t1771611819777.TKuMHK\tBad (Webdriver)\t172.182.212.49\t\nN/A\n\nFeb 20 10:18 AM\t1771611535877.YLBzb5\tBad (Webdriver)\t172.182.212.49\t\nN/A\n\nFeb 20 10:18 AM\t1771611523451.SyxyUi\tBad (Webdriver)\t172.182.212.49\t\nN/A\n\nFeb 20 10:18 AM\t1771611516817.3aY7jV\tBad (Webdriver)\t172.182.212.49\t\nN/A\n\nFeb 20 09:22 AM\t1771608170683.SLhu0y\tBad (Webdriver)\t172.178.118.197\t\nN/A\n\nFeb 20 09:19 AM\t1771607946074.KTXDvR\tBad (Webdriver)\t172.178.118.197\t\nN/A\n\nFeb 20 09:18 AM\t1771607935080.F9Pj08\tBad (Webdriver)\t172.178.118.197\t\nN/A\n\nFeb 20 09:18 AM\t1771607929172.FMqG9M\tBad (Webdriver)\t172.178.118.197\t\nN/A\n\nFeb 20 08:20 AM\t1771604417717.FM5guL\tBad (Webdriver)\t64.236.215.53\t\nN/A\n\nFeb 20 08:16 AM\t1771604193939.Lj88Ym\tBad (Webdriver)\t64.236.215.53\t\nN/A\nShow older bot visits\nLearn more\nUSE CASE TUTORIAL\nWeb Scraping Prevention\nARTICLE\nBetting Bots\n1440 W. Taylor St #735, Chicago, IL 60607, USA\n\u00a9 FingerprintJS 2022, Inc"
+    }
+  ]
+}

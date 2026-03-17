@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-02-20T10:14:47.492898+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+    "cores": 14,
+    "memory": 39,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "rebrowser",
+      "url": "https://bot-detector.rebrowser.net/",
+      "timestamp": "2026-02-20T10:14:49.807328+00:00",
+      "status": "error",
+      "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://bot-detector.rebrowser.net/\nCall log:\n  - navigating to \"https://bot-detector.rebrowser.net/\", waiting until \"domcontentloaded\"\n",
+      "results": {},
+      "duration_ms": 338
+    },
+    {
+      "name": "deviceandbrowserinfo",
+      "url": "https://deviceandbrowserinfo.com/are_you_a_bot",
+      "timestamp": "2026-02-20T10:14:50.148305+00:00",
+      "status": "error",
+      "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://deviceandbrowserinfo.com/are_you_a_bot\nCall log:\n  - navigating to \"https://deviceandbrowserinfo.com/are_you_a_bot\", waiting until \"domcontentloaded\"\n",
+      "results": {},
+      "duration_ms": 108
+    },
+    {
+      "name": "sannysoft",
+      "url": "https://bot.sannysoft.com/",
+      "timestamp": "2026-02-20T10:14:50.258872+00:00",
+      "status": "error",
+      "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://bot.sannysoft.com/\nCall log:\n  - navigating to \"https://bot.sannysoft.com/\", waiting until \"domcontentloaded\"\n",
+      "results": {},
+      "duration_ms": 113
+    }
+  ]
+}

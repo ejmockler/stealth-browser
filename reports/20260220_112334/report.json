@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-20T18:23:34.402569+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+    "cores": 5,
+    "memory": 18,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "incolumitas",
+      "url": "https://bot.incolumitas.com/",
+      "timestamp": "2026-02-20T18:23:35.836893+00:00",
+      "status": "error",
+      "error": "Page.goto: Timeout 20000ms exceeded.\nCall log:\n  - navigating to \"https://bot.incolumitas.com/\", waiting until \"domcontentloaded\"\n",
+      "results": {},
+      "duration_ms": 50274
+    }
+  ]
+}

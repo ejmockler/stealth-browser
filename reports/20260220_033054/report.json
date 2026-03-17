@@ -1,0 +1,307 @@
+{
+  "timestamp": "2026-02-20T10:30:54.240537+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Apple, Apple M3)",
+    "cores": 10,
+    "memory": 31,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "rebrowser",
+      "url": "https://bot-detector.rebrowser.net/",
+      "timestamp": "2026-02-20T10:30:55.422359+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "\u26aa\ufe0f dummyFn": "2.179 ms",
+        "\u26aa\ufe0f sourceUrlLeak": "5.245 ms",
+        "\u26aa\ufe0f mainWorldExecution": "5.631 ms",
+        "\ud83d\udfe2 runtimeEnableLeak": "5.802 ms",
+        "\u26aa\ufe0f exposeFunctionLeak": "7.139 ms",
+        "\ud83d\udd34 navigatorWebdriver": "7.73 ms",
+        "\ud83d\udfe2 viewport": "22.445 ms",
+        "\ud83d\udfe2 pwInitScripts": "24.828 ms",
+        "\ud83d\udfe2 bypassCsp": "43.661 ms",
+        "\ud83d\udfe2 useragent": "280.937 ms"
+      },
+      "duration_ms": 14340,
+      "page_text": "\ud83d\udd75\ufe0f rebrowser-bot-detector\nModern tests to detect automated browser behavior. See github repo for more details. How to properly run the tests?\nTest name\tTime since load\tNotes\n\u26aa\ufe0f dummyFn\t2.179 ms\tCall window.dummyFn() to test if you can access main world objects.\n\u26aa\ufe0f sourceUrlLeak\t5.245 ms\tCall document.getElementById('detections-json') to test sourceUrl leak.\n\u26aa\ufe0f mainWorldExecution\t5.631 ms\tCall document.getElementsByClassName('div') to trigger this test. If you did and the test wasn't triggered, then you're running it in an isolated world, which is safe and not detectable.\n\ud83d\udfe2 runtimeEnableLeak\t5.802 ms\tNo leak detected.\n\u26aa\ufe0f exposeFunctionLeak\t7.139 ms\tNo window.exposedFn. Use page.exposeFunction to trigger this test.\n\ud83d\udd34 navigatorWebdriver\t7.73 ms\tThis property shouldn't be undefined. You might have it deleted manually.\ntypeof navigator.webdriver = undefined\n\n\ud83d\udfe2 viewport\t22.445 ms\tViewport is different from default values used in automation libraries.\n{\n  \"width\": 1680,\n  \"height\": 1050\n}\n\n\ud83d\udfe2 pwInitScripts\t24.828 ms\tNo window.__pwInitScripts detected.\n\ud83d\udfe2 bypassCsp\t43.661 ms\tContent Security Policy (CSP) is enabled, it's expected behavior.\n\ud83d\udfe2 useragent\t280.937 ms\tGoogle Chrome version is not higher than the latest stable release version which is fine.\n{\n  \"useragentVersionItems\": [\n    {\n      \"brand\": \"Chromium\",\n      \"version\": \"121.0.0.0\"\n    },\n    {\n      \"brand\": \"Google Chrome\",\n      \"version\": \"121.0.0.0\"\n    }\n  ],\n  \"latestStableRelease\": {\n    \"version\": \"145.0.7632.77\",\n    \"date\": \"2026-02-18T21:08:37.061Z\"\n  }\n}\nJSON\nSponsored by rebrowser.net \u2014 the ultimate stealth browser and scraping solution fueled by AI."
+    },
+    {
+      "name": "deviceandbrowserinfo",
+      "url": "https://deviceandbrowserinfo.com/are_you_a_bot",
+      "timestamp": "2026-02-20T10:31:09.773400+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "isBot": true,
+        "details": {
+          "hasBotUserAgent": false,
+          "hasWebdriverTrue": false,
+          "hasWebdriverInFrameTrue": false,
+          "isPlaywright": false,
+          "hasInconsistentChromeObject": false,
+          "isPhantom": false,
+          "isNightmare": false,
+          "isSequentum": false,
+          "isSeleniumChromeDefault": false,
+          "isHeadlessChrome": false,
+          "isWebGLInconsistent": false,
+          "isAutomatedWithCDP": true,
+          "isAutomatedWithCDPInWebWorker": true,
+          "hasInconsistentClientHints": false,
+          "hasInconsistentGPUFeatures": false,
+          "isIframeOverridden": false,
+          "hasInconsistentWorkerValues": true,
+          "hasHighHardwareConcurrency": false,
+          "hasHeadlessChromeDefaultScreenResolution": false,
+          "hasSuspiciousWeakSignals": false
+        }
+      },
+      "duration_ms": 10748,
+      "page_text": "DEVICE AND BROWSER INFO\nProxy Detection Database\nPricing\nMy Device\nAPIs\nData\nBlog\nLogin\n\n\ud83d\udd25 New: Test our proxy detection database (more than 35M proxy IPs, updated every 2h)\n\nAre you a bot?\n\u274c\nYou are a bot!\nRaw detection details\nCopy\n{\n  \"isBot\": true,\n  \"details\": {\n    \"hasBotUserAgent\": false,\n    \"hasWebdriverTrue\": false,\n    \"hasWebdriverInFrameTrue\": false,\n    \"isPlaywright\": false,\n    \"hasInconsistentChromeObject\": false,\n    \"isPhantom\": false,\n    \"isNightmare\": false,\n    \"isSequentum\": false,\n    \"isSeleniumChromeDefault\": false,\n    \"isHeadlessChrome\": false,\n    \"isWebGLInconsistent\": false,\n    \"isAutomatedWithCDP\": true,\n    \"isAutomatedWithCDPInWebWorker\": true,\n    \"hasInconsistentClientHints\": false,\n    \"hasInconsistentGPUFeatures\": false,\n    \"isIframeOverridden\": false,\n    \"hasInconsistentWorkerValues\": true,\n    \"hasHighHardwareConcurrency\": false,\n    \"hasHeadlessChromeDefaultScreenResolution\": false,\n    \"hasSuspiciousWeakSignals\": false\n  }\n}\nHow does this test work?\n\nYou can use this page to test whether or not your bot is detected. The test is based only on fingerprinting signals:\n\nClient-side signals: Browser fingerprinting (requires JavaScript)\nServer-side signals: HTTP headers (future: TCP/TLS fingerprinting)\n\nThis test does not use IP reputation or user behavior. You can run several tests in a row; it won't affect the result.\n\nNew: We have added a new test that detects suspicious client-side behavior, such as mouse movements, typing speed, and form submission. It also detects CDP mouse leak. You can find it here.\n\n\u25b6\nDetection signals explained\n\nhasBotUserAgent: True if the User-Agent string (navigator.userAgent) matches known bot, crawler, or automation tool patterns.\n\nhasWebdriverTrue: True if navigator.webdriver is set to true, which is a direct indicator of browser automation (e.g., Selenium, Puppeteer, Playwright).\n\nhasWebdriverInFrameTrue: True if navigator.webdriver is detected as true inside an iframe.\n\nisPlaywright: True if Playwright-specific global variables or bindings (such as __pwInitScripts or __playwright__binding__) are present in the window object.\n\nhasInconsistentChromeObject: True if the window.chrome object is missing or inconsistent for a Chromium-based browser.\n\nisPhantom: True if PhantomJS-specific properties (window.callPhantom, window._phantom, or window.phantom) are detected, indicating the use of the PhantomJS headless browser.\n\nisNightmare: True if the window.__nightmare property is present, which is injected by the Nightmare.js automation framework.\n\nisSequentum: True if the Sequentum web scraping tool is detected, typically by checking if window.external contains a string with 'Sequentum'.\n\nisSeleniumChromeDefault: True if the Selenium Chrome default automation object (document.$cdc_asdjflasutopfhvcZLmcfl_) is present, which is a known Selenium signature.\n\nisHeadlessChrome: True if the browser is running in headless Chrome mode, detected by checking for headless-specific features.\n\nisWebGLInconsistent: True if the WebGL renderer or vendor information (from WebGLRenderingContext.getParameter with UNMASKED_VENDOR_WEBGL/UNMASKED_RENDERER_WEBGL) is inconsistent, missing, or spoofed.\n\nisAutomatedWithCDP: True if Chrome DevTools Protocol (CDP) automation is detected (main JavaScript execution context), cf article here.\n\nisAutomatedWithCDPInWebWorker: True if CDP automation is detected inside a web worker context (web worker execution context).\n\nhasInconsistentClientHints: True if browser client hints (like navigator.userAgentData, brands, platform, or getHighEntropyValues) are inconsistent, manipulated, or do not match the expected values for the browser.\n\nhasInconsistentGPUFeatures: True if reported GPU features (from WebGL or WebGPU APIs) do not match the expected values for the browser/device.\n\nisIframeOverridden: True if iframe behavior is overridden, such as by detecting modifications to iframe contentWindow or overridden methods, which can indicate anti-detection scripts or automation.\n\nhasInconsistentWorkerValues: True if values collected in web workers (e.g., userAgent, languages, hardwareConcurrency, platform, WebGL vendor/renderer) differ from those in the main JS context, suggesting environment spoofing.\n\nhasHighHardwareConcurrency: True if the reported number of CPU cores (navigator.hardwareConcurrency) is unusually high or inconsistent with typical consumer devices, which can be a sign of a virtualized or automated environment.\n\nhasHeadlessChromeDefaultScreenResolution: True if the screen resolution matches known defaults for headless Chrome (e.g., 800x600), which is a common signature of headless automation.\n\nhasSuspiciousWeakSignals: True if a combination of minor signals (such as subtle inconsistencies or rare values) together suggest possible automation or bot activity, even if no single signal is conclusive, cf article here.\n\nDEVICE AND BROWSER INFO\n\nAll the data you need about devices:\n\nBrowser fingerprint\nUser agent\nHTTP headers"
+    },
+    {
+      "name": "sannysoft",
+      "url": "https://bot.sannysoft.com/",
+      "timestamp": "2026-02-20T10:31:20.533282+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "User Agent (Old)": {
+          "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "WebDriver (New)": {
+          "value": "present (failed)",
+          "passed": false
+        },
+        "WebDriver Advanced": {
+          "value": "passed",
+          "passed": true
+        },
+        "Chrome (New)": {
+          "value": "present (passed)",
+          "passed": true
+        },
+        "Permissions (New)": {
+          "value": "denied",
+          "passed": true
+        },
+        "Plugins Length (Old)": {
+          "value": "",
+          "passed": false
+        },
+        "Plugins is of type PluginArray": {
+          "value": "",
+          "passed": false
+        },
+        "Languages (Old)": {
+          "value": "",
+          "passed": false
+        },
+        "WebGL Vendor": {
+          "value": "",
+          "passed": true
+        },
+        "WebGL Renderer": {
+          "value": "",
+          "passed": true
+        },
+        "Broken Image Dimensions": {
+          "value": "",
+          "passed": true
+        },
+        "PHANTOM_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_PROPERTIES": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_ETSL": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_LANGUAGE": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WEBSOCKET": {
+          "value": "ok",
+          "passed": true
+        },
+        "MQ_SCREEN": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_OVERFLOW": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WINDOW_HEIGHT": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_CHROME_OBJ": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PERMISSIONS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PLUGINS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_IFRAME": {
+          "value": "FAIL",
+          "passed": false
+        },
+        "CHR_DEBUG_TOOLS": {
+          "value": "ok",
+          "passed": true
+        },
+        "SELENIUM_DRIVER": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_BATTERY": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_MEMORY": {
+          "value": "ok",
+          "passed": true
+        },
+        "TRANSPARENT_PIXEL": {
+          "value": "ok",
+          "passed": true
+        },
+        "SEQUENTUM": {
+          "value": "ok",
+          "passed": true
+        },
+        "VIDEO_CODECS": {
+          "value": "ok",
+          "passed": true
+        },
+        "navigator.cookieEnabled": {
+          "value": "document.write(navigator.cookieEnabled);\n            true",
+          "passed": true
+        },
+        "navigator.doNotTrack": {
+          "value": "document.write(navigator.doNotTrack);\n            null",
+          "passed": true
+        },
+        "navigator.msDoNotTrack": {
+          "value": "document.write(navigator.msDoNotTrack);\n            undefined",
+          "passed": true
+        },
+        "navigator.sendBeacon": {
+          "value": "document.write(navigator.sendBeacon());",
+          "passed": true
+        },
+        "navigator.userAgent": {
+          "value": "document.write(navigator.userAgent);\n            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "navigator.appName": {
+          "value": "document.write(navigator.appName);\n            Netscape",
+          "passed": true
+        },
+        "navigator.vendor": {
+          "value": "document.write(navigator.vendor);\n            Google Inc.",
+          "passed": true
+        },
+        "navigator.appCodeName": {
+          "value": "document.write(navigator.appCodeName);\n            Mozilla",
+          "passed": true
+        },
+        "navigator.getUserMedia": {
+          "value": "document.write(navigator.getUserMedia());",
+          "passed": true
+        },
+        "navigator.sayswho": {
+          "value": "document.write(navigator.sayswho);\n            undefined",
+          "passed": true
+        },
+        "navigator.javaEnabled": {
+          "value": "document.write(navigator.javaEnabled());\n            false",
+          "passed": true
+        },
+        "navigator.plugins": {
+          "value": "document.write(JSON.stringify(navigator.plugins));\n            {\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}",
+          "passed": true
+        },
+        "screen.width": {
+          "value": "document.write(screen.width);\n            1680",
+          "passed": true
+        },
+        "screen.height": {
+          "value": "document.write(screen.height);\n            1050",
+          "passed": true
+        },
+        "screen.colorDepth": {
+          "value": "document.write(screen.colorDepth);\n            24",
+          "passed": true
+        },
+        "navigator.language": {
+          "value": "document.write(navigator.language);\n            en-US",
+          "passed": true
+        },
+        "navigator.loadPurpose": {
+          "value": "document.write(navigator.loadPurpose);\n            undefined",
+          "passed": true
+        },
+        "navigator.platform": {
+          "value": "document.write(navigator.platform);\n            MacIntel",
+          "passed": true
+        },
+        "navigator.mediaDevices": {
+          "value": "audioinput:  id = videoinput:  id = audiooutput:  id =",
+          "passed": true
+        },
+        "navigator.getBattery details": {
+          "value": "Charging: falseLevel: 0.67",
+          "passed": true
+        },
+        "Canvas1": {
+          "value": "",
+          "passed": true
+        },
+        "Canvas2": {
+          "value": "",
+          "passed": true
+        },
+        "Canvas3 (iframe sandbox)": {
+          "value": "",
+          "passed": true
+        },
+        "Canvas4 (iframe sandbox)": {
+          "value": "",
+          "passed": true
+        },
+        "Canvas5 (iframe)": {
+          "value": "",
+          "passed": true
+        }
+      },
+      "duration_ms": 4349,
+      "page_text": "Intoli.com tests + additions\nTest Name\tResult\nUser Agent\n(Old)\n\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\nWebDriver\n(New)\n\tpresent (failed)\nWebDriver Advanced\tpassed\nChrome\n(New)\n\tpresent (passed)\nPermissions\n(New)\n\tdenied\nPlugins Length\n(Old)\n\t\nPlugins is of type PluginArray\t\nLanguages\n(Old)\n\t\nWebGL Vendor\t\nWebGL Renderer\t\nBroken Image Dimensions\t\nFingerprint Scanner tests\nPHANTOM_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\"\n}\n\nPHANTOM_PROPERTIES\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false\n     ]\n}\n\nPHANTOM_ETSL\tok\t\n{\n     \"etsl\": 33\n}\n\nPHANTOM_LANGUAGE\tok\t\n{\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ]\n}\n\nPHANTOM_WEBSOCKET\tok\t\n{}\n\nMQ_SCREEN\tok\t\n{}\n\nPHANTOM_OVERFLOW\tok\t\n{\n     \"depth\": 8843,\n     \"errorMessage\": \"Maximum call stack size exceeded\",\n     \"errorName\": \"RangeError\",\n     \"errorStacklength\": 846\n}\n\nPHANTOM_WINDOW_HEIGHT\tok\t\n{\n     \"wInnerHeight\": 1050,\n     \"wOuterHeight\": 1162,\n     \"wOuterWidth\": 1680,\n     \"wInnerWidth\": 1680,\n     \"wScreenX\": 130,\n     \"wPageXOffset\": 0,\n     \"wPageYOffset\": 0,\n     \"cWidth\": 1664,\n     \"cHeight\": 1597,\n     \"sWidth\": 1680,\n     \"sHeight\": 1050,\n     \"sAvailWidth\": 1680,\n     \"sAvailHeight\": 996,\n     \"sColorDepth\": 24,\n     \"sPixelDepth\": 24,\n     \"wDevicePixelRatio\": 1\n}\n\nHEADCHR_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\"\n}\n\nHEADCHR_CHROME_OBJ\tok\t\n{}\n\nHEADCHR_PERMISSIONS\tok\t\n{}\n\nHEADCHR_PLUGINS\tok\t\n{\n     \"plugins\": {\n          \"error\": true,\n          \"message\": \"TypeError: Illegal invocation\"\n     }\n}\n\nHEADCHR_IFRAME\tFAIL\t\n{}\n\nCHR_DEBUG_TOOLS\tok\t\n{}\n\nSELENIUM_DRIVER\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false\n     ]\n}\n\nCHR_BATTERY\tok\t\n{}\n\nCHR_MEMORY\tok\t\n{}\n\nTRANSPARENT_PIXEL\tok\t\n{\n     \"0\": 0,\n     \"1\": 0,\n     \"2\": 0,\n     \"3\": 0\n}\n\nSEQUENTUM\tok\t\n{}\n\nVIDEO_CODECS\tok\t\n{\n     \"h264\": \"probably\"\n}\nSome details\nnavigator.cookieEnabled\ttrue\nnavigator.doNotTrack\tnull\nnavigator.msDoNotTrack\tundefined\nnavigator.sendBeacon\t\nnavigator.cookieEnabled\ttrue\nnavigator.userAgent\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\nnavigator.appName\tNetscape\nnavigator.vendor\tGoogle Inc.\nnavigator.appCodeName\tMozilla\nnavigator.getUserMedia\t\nnavigator.sayswho\tundefined\nnavigator.javaEnabled\tfalse\nnavigator.plugins\t{\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}\nscreen.width\t1680\nscreen.height\t1050\nscreen.colorDepth\t24\nnavigator.language\ten-US\nnavigator.loadPurpose\tundefined\nnavigator.platform\tMacIntel\nnavigator.mediaDevices\taudioinput: id =\nvideoinput: id =\naudiooutput: id =\n\nnavigator.getBattery details\tCharging: false\nLevel: 0.67\nCanvas1\t\nCanvas2\t\nCanvas3 (iframe sandbox)\t\nCanvas4 (iframe sandbox)\t\nCanvas5 (iframe)\t\nFp-collect info\n{\n     \"plugins\": {\n          \"error\": true,\n          \"message\": \"TypeError: Illegal invocation\"\n     },\n     \"mimeTypes\": [],\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36\",\n     \"platform\": \"MacIntel\",\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ],\n     \"screen\": {\n          \"wInnerHeight\": 1050,\n          \"wOuterHeight\": 1162,\n          \"wOuterWidth\": 1680,\n          \"wInnerWidth\": 1680,\n          \"wScreenX\": 130,\n          \"wPageXOffset\": 0,\n          \"wPageYOffset\": 0,\n          \"cWidth\": 1664,\n          \"cHeight\": 1597,\n          \"sWidth\": 1680,\n          \"sHeight\": 1050,\n          \"sAvailWidth\": 1680,\n          \"sAvailHeight\": 996,\n          \"sColorDepth\": 24,\n          \"sPixelDepth\": 24,\n          \"wDevicePixelRatio\": 1\n     },\n     \"touchScreen\": [\n          0,\n          false,\n          false\n     ],\n     \"videoCard\": [\n          \"Google Inc.\",\n          \"ANGLE (Apple, Apple M3)\"\n     ],\n     \"multimediaDevices\": {\n          \"speakers\": 1,\n          \"micros\": 1,\n          \"webcams\": 1\n     },\n     \"productSub\": \"20030107\",\n     \"navigatorPrototype\": [\n          \"webdriver~~~\",\n          \"platform~~~function get platform() { [native code] }\",\n          \"hardwareConcurrency~~~function get hardwareConcurrency() { [native code] }\",\n          \"deviceMemory~~~function get deviceMemory() { [native code] }\",\n          \"connection~~~functi"
+    }
+  ]
+}

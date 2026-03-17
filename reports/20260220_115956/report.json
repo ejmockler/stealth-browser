@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-02-20T18:59:56.793074+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "Win32",
+    "platform_key": "windows",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "viewport": "1920x1080",
+    "gpu": "ANGLE (Intel, Intel(R) UHD Graphics 630 Direct3D11 vs_5_0 ps_5_0)",
+    "cores": 12,
+    "memory": 21,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "rebrowser",
+      "url": "https://bot-detector.rebrowser.net/",
+      "timestamp": "2026-02-20T18:59:58.058711+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "\u26aa\ufe0f dummyFn": "1.896 ms",
+        "\u26aa\ufe0f sourceUrlLeak": "4.116 ms",
+        "\u26aa\ufe0f mainWorldExecution": "4.519 ms",
+        "\ud83d\udfe2 runtimeEnableLeak": "4.727 ms",
+        "\u26aa\ufe0f exposeFunctionLeak": "6.107 ms",
+        "\ud83d\udfe2 navigatorWebdriver": "6.791 ms",
+        "\ud83d\udfe2 viewport": "22.742 ms",
+        "\ud83d\udfe2 pwInitScripts": "23.747 ms",
+        "\ud83d\udfe2 bypassCsp": "40.813 ms",
+        "\ud83d\udfe2 useragent": "163.884 ms"
+      },
+      "duration_ms": 14159,
+      "page_text": "\ud83d\udd75\ufe0f rebrowser-bot-detector\nModern tests to detect automated browser behavior. See github repo for more details. How to properly run the tests?\nTest name\tTime since load\tNotes\n\u26aa\ufe0f dummyFn\t1.896 ms\tCall window.dummyFn() to test if you can access main world objects.\n\u26aa\ufe0f sourceUrlLeak\t4.116 ms\tCall document.getElementById('detections-json') to test sourceUrl leak.\n\u26aa\ufe0f mainWorldExecution\t4.519 ms\tCall document.getElementsByClassName('div') to trigger this test. If you did and the test wasn't triggered, then you're running it in an isolated world, which is safe and not detectable.\n\ud83d\udfe2 runtimeEnableLeak\t4.727 ms\tNo leak detected.\n\u26aa\ufe0f exposeFunctionLeak\t6.107 ms\tNo window.exposedFn. Use page.exposeFunction to trigger this test.\n\ud83d\udfe2 navigatorWebdriver\t6.791 ms\tNo webdriver presented.\n\ud83d\udfe2 viewport\t22.742 ms\tViewport is different from default values used in automation libraries.\n{\n  \"width\": 1920,\n  \"height\": 1080\n}\n\n\ud83d\udfe2 pwInitScripts\t23.747 ms\tNo window.__pwInitScripts detected.\n\ud83d\udfe2 bypassCsp\t40.813 ms\tContent Security Policy (CSP) is enabled, it's expected behavior.\n\ud83d\udfe2 useragent\t163.884 ms\tGoogle Chrome version is not higher than the latest stable release version which is fine.\n{\n  \"useragentVersionItems\": [\n    {\n      \"brand\": \"Chromium\",\n      \"version\": \"122.0.0.0\"\n    },\n    {\n      \"brand\": \"Google Chrome\",\n      \"version\": \"122.0.0.0\"\n    }\n  ],\n  \"latestStableRelease\": {\n    \"version\": \"145.0.7632.77\",\n    \"date\": \"2026-02-18T21:08:37.061Z\"\n  }\n}\nJSON\nSponsored by rebrowser.net \u2014 the ultimate stealth browser and scraping solution fueled by AI."
+    },
+    {
+      "name": "deviceandbrowserinfo",
+      "url": "https://deviceandbrowserinfo.com/are_you_a_bot",
+      "timestamp": "2026-02-20T19:00:12.226188+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "isBot": true,
+        "details": {
+          "hasBotUserAgent": false,
+          "hasWebdriverTrue": false,
+          "hasWebdriverInFrameTrue": false,
+          "isPlaywright": false,
+          "hasInconsistentChromeObject": false,
+          "isPhantom": false,
+          "isNightmare": false,
+          "isSequentum": false,
+          "isSeleniumChromeDefault": false,
+          "isHeadlessChrome": false,
+          "isWebGLInconsistent": false,
+          "isAutomatedWithCDP": true,
+          "isAutomatedWithCDPInWebWorker": true,
+          "hasInconsistentClientHints": false,
+          "hasInconsistentGPUFeatures": false,
+          "isIframeOverridden": false,
+          "hasInconsistentWorkerValues": false,
+          "hasHighHardwareConcurrency": false,
+          "hasHeadlessChromeDefaultScreenResolution": false,
+          "hasSuspiciousWeakSignals": false
+        }
+      },
+      "duration_ms": 7209,
+      "page_text": "DEVICE AND BROWSER INFO\nProxy Detection Database\nPricing\nMy Device\nAPIs\nData\nBlog\nLogin\n\n\ud83d\udd25 New: Test our proxy detection database (more than 35M proxy IPs, updated every 2h)\n\nAre you a bot?\n\u274c\nYou are a bot!\nRaw detection details\nCopy\n{\n  \"isBot\": true,\n  \"details\": {\n    \"hasBotUserAgent\": false,\n    \"hasWebdriverTrue\": false,\n    \"hasWebdriverInFrameTrue\": false,\n    \"isPlaywright\": false,\n    \"hasInconsistentChromeObject\": false,\n    \"isPhantom\": false,\n    \"isNightmare\": false,\n    \"isSequentum\": false,\n    \"isSeleniumChromeDefault\": false,\n    \"isHeadlessChrome\": false,\n    \"isWebGLInconsistent\": false,\n    \"isAutomatedWithCDP\": true,\n    \"isAutomatedWithCDPInWebWorker\": true,\n    \"hasInconsistentClientHints\": false,\n    \"hasInconsistentGPUFeatures\": false,\n    \"isIframeOverridden\": false,\n    \"hasInconsistentWorkerValues\": false,\n    \"hasHighHardwareConcurrency\": false,\n    \"hasHeadlessChromeDefaultScreenResolution\": false,\n    \"hasSuspiciousWeakSignals\": false\n  }\n}\nHow does this test work?\n\nYou can use this page to test whether or not your bot is detected. The test is based only on fingerprinting signals:\n\nClient-side signals: Browser fingerprinting (requires JavaScript)\nServer-side signals: HTTP headers (future: TCP/TLS fingerprinting)\n\nThis test does not use IP reputation or user behavior. You can run several tests in a row; it won't affect the result.\n\nNew: We have added a new test that detects suspicious client-side behavior, such as mouse movements, typing speed, and form submission. It also detects CDP mouse leak. You can find it here.\n\n\u25b6\nDetection signals explained\n\nhasBotUserAgent: True if the User-Agent string (navigator.userAgent) matches known bot, crawler, or automation tool patterns.\n\nhasWebdriverTrue: True if navigator.webdriver is set to true, which is a direct indicator of browser automation (e.g., Selenium, Puppeteer, Playwright).\n\nhasWebdriverInFrameTrue: True if navigator.webdriver is detected as true inside an iframe.\n\nisPlaywright: True if Playwright-specific global variables or bindings (such as __pwInitScripts or __playwright__binding__) are present in the window object.\n\nhasInconsistentChromeObject: True if the window.chrome object is missing or inconsistent for a Chromium-based browser.\n\nisPhantom: True if PhantomJS-specific properties (window.callPhantom, window._phantom, or window.phantom) are detected, indicating the use of the PhantomJS headless browser.\n\nisNightmare: True if the window.__nightmare property is present, which is injected by the Nightmare.js automation framework.\n\nisSequentum: True if the Sequentum web scraping tool is detected, typically by checking if window.external contains a string with 'Sequentum'.\n\nisSeleniumChromeDefault: True if the Selenium Chrome default automation object (document.$cdc_asdjflasutopfhvcZLmcfl_) is present, which is a known Selenium signature.\n\nisHeadlessChrome: True if the browser is running in headless Chrome mode, detected by checking for headless-specific features.\n\nisWebGLInconsistent: True if the WebGL renderer or vendor information (from WebGLRenderingContext.getParameter with UNMASKED_VENDOR_WEBGL/UNMASKED_RENDERER_WEBGL) is inconsistent, missing, or spoofed.\n\nisAutomatedWithCDP: True if Chrome DevTools Protocol (CDP) automation is detected (main JavaScript execution context), cf article here.\n\nisAutomatedWithCDPInWebWorker: True if CDP automation is detected inside a web worker context (web worker execution context).\n\nhasInconsistentClientHints: True if browser client hints (like navigator.userAgentData, brands, platform, or getHighEntropyValues) are inconsistent, manipulated, or do not match the expected values for the browser.\n\nhasInconsistentGPUFeatures: True if reported GPU features (from WebGL or WebGPU APIs) do not match the expected values for the browser/device.\n\nisIframeOverridden: True if iframe behavior is overridden, such as by detecting modifications to iframe contentWindow or overridden methods, which can indicate anti-detection scripts or automation.\n\nhasInconsistentWorkerValues: True if values collected in web workers (e.g., userAgent, languages, hardwareConcurrency, platform, WebGL vendor/renderer) differ from those in the main JS context, suggesting environment spoofing.\n\nhasHighHardwareConcurrency: True if the reported number of CPU cores (navigator.hardwareConcurrency) is unusually high or inconsistent with typical consumer devices, which can be a sign of a virtualized or automated environment.\n\nhasHeadlessChromeDefaultScreenResolution: True if the screen resolution matches known defaults for headless Chrome (e.g., 800x600), which is a common signature of headless automation.\n\nhasSuspiciousWeakSignals: True if a combination of minor signals (such as subtle inconsistencies or rare values) together suggest possible automation or bot activity, even if no single signal is conclusive, cf article here.\n\nDEVICE AND BROWSER INFO\n\nAll the data you need about devices:\n\nBrowser fingerprint\nUser agent\nHTTP header"
+    }
+  ]
+}

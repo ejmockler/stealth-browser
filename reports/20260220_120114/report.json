@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-02-20T19:01:14.101272+00:00",
+  "headless": false,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+    "cores": 12,
+    "memory": 31,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "fingerprint_botd",
+      "url": "https://demo.fingerprint.com/bot-firewall",
+      "timestamp": "2026-02-20T19:01:17.593965+00:00",
+      "status": "error",
+      "error": "Page.screenshot: Target page, context or browser has been closed\nCall log:\n  - taking page screenshot\n",
+      "results": {},
+      "duration_ms": 6182
+    }
+  ]
+}

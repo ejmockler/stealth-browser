@@ -1,0 +1,380 @@
+{
+  "timestamp": "2026-02-23T07:47:52.735055+00:00",
+  "headless": true,
+  "platform": null,
+  "config": {
+    "platform": "MacIntel",
+    "platform_key": "macos",
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+    "viewport": "1680x1050",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+    "cores": 5,
+    "memory": 48,
+    "timezone": "America/Los_Angeles"
+  },
+  "results": [
+    {
+      "name": "rebrowser",
+      "url": "https://bot-detector.rebrowser.net/",
+      "timestamp": "2026-02-23T07:47:53.733942+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "\u26aa\ufe0f dummyFn": "1.623 ms",
+        "\u26aa\ufe0f sourceUrlLeak": "3.075 ms",
+        "\u26aa\ufe0f mainWorldExecution": "3.328 ms",
+        "\ud83d\udfe2 runtimeEnableLeak": "3.528 ms",
+        "\u26aa\ufe0f exposeFunctionLeak": "4.723 ms",
+        "\ud83d\udfe2 navigatorWebdriver": "5.345 ms",
+        "\ud83d\udfe2 viewport": "15.424 ms",
+        "\ud83d\udfe2 pwInitScripts": "16.074 ms",
+        "\ud83d\udfe2 bypassCsp": "31.184 ms",
+        "\ud83d\udfe2 useragent": "361.923 ms"
+      },
+      "duration_ms": 14435,
+      "page_text": "\ud83d\udd75\ufe0f rebrowser-bot-detector\nModern tests to detect automated browser behavior. See github repo for more details. How to properly run the tests?\nTest name\tTime since load\tNotes\n\u26aa\ufe0f dummyFn\t1.623 ms\tCall window.dummyFn() to test if you can access main world objects.\n\u26aa\ufe0f sourceUrlLeak\t3.075 ms\tCall document.getElementById('detections-json') to test sourceUrl leak.\n\u26aa\ufe0f mainWorldExecution\t3.328 ms\tCall document.getElementsByClassName('div') to trigger this test. If you did and the test wasn't triggered, then you're running it in an isolated world, which is safe and not detectable.\n\ud83d\udfe2 runtimeEnableLeak\t3.528 ms\tNo leak detected.\n\u26aa\ufe0f exposeFunctionLeak\t4.723 ms\tNo window.exposedFn. Use page.exposeFunction to trigger this test.\n\ud83d\udfe2 navigatorWebdriver\t5.345 ms\tNo webdriver presented.\n\ud83d\udfe2 viewport\t15.424 ms\tViewport is different from default values used in automation libraries.\n{\n  \"width\": 1680,\n  \"height\": 1050\n}\n\n\ud83d\udfe2 pwInitScripts\t16.074 ms\tNo window.__pwInitScripts detected.\n\ud83d\udfe2 bypassCsp\t31.184 ms\tContent Security Policy (CSP) is enabled, it's expected behavior.\n\ud83d\udfe2 useragent\t361.923 ms\tGoogle Chrome version is not higher than the latest stable release version which is fine.\n{\n  \"useragentVersionItems\": [\n    {\n      \"brand\": \"Chromium\",\n      \"version\": \"122.0.0.0\"\n    },\n    {\n      \"brand\": \"Google Chrome\",\n      \"version\": \"122.0.0.0\"\n    }\n  ],\n  \"latestStableRelease\": {\n    \"version\": \"145.0.7632.77\",\n    \"date\": \"2026-02-18T21:08:37.061Z\"\n  }\n}\nJSON\nSponsored by rebrowser.net \u2014 the ultimate stealth browser and scraping solution fueled by AI."
+    },
+    {
+      "name": "deviceandbrowserinfo",
+      "url": "https://deviceandbrowserinfo.com/are_you_a_bot",
+      "timestamp": "2026-02-23T07:48:08.176362+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "isBot": true,
+        "details": {
+          "hasBotUserAgent": false,
+          "hasWebdriverTrue": false,
+          "hasWebdriverInFrameTrue": false,
+          "isPlaywright": false,
+          "hasInconsistentChromeObject": false,
+          "isPhantom": false,
+          "isNightmare": false,
+          "isSequentum": false,
+          "isSeleniumChromeDefault": false,
+          "isHeadlessChrome": false,
+          "isWebGLInconsistent": false,
+          "isAutomatedWithCDP": true,
+          "isAutomatedWithCDPInWebWorker": true,
+          "hasInconsistentClientHints": false,
+          "hasInconsistentGPUFeatures": false,
+          "isIframeOverridden": false,
+          "hasInconsistentWorkerValues": false,
+          "hasHighHardwareConcurrency": false,
+          "hasHeadlessChromeDefaultScreenResolution": false,
+          "hasSuspiciousWeakSignals": false
+        }
+      },
+      "duration_ms": 9284,
+      "page_text": "DEVICE AND BROWSER INFO\nProxy Detection Database\nPricing\nMy Device\nAPIs\nData\nBlog\nLogin\n\n\ud83d\udd25 New: Test our proxy detection database (more than 35M proxy IPs, updated every 2h)\n\nAre you a bot?\n\u274c\nYou are a bot!\nRaw detection details\nCopy\n{\n  \"isBot\": true,\n  \"details\": {\n    \"hasBotUserAgent\": false,\n    \"hasWebdriverTrue\": false,\n    \"hasWebdriverInFrameTrue\": false,\n    \"isPlaywright\": false,\n    \"hasInconsistentChromeObject\": false,\n    \"isPhantom\": false,\n    \"isNightmare\": false,\n    \"isSequentum\": false,\n    \"isSeleniumChromeDefault\": false,\n    \"isHeadlessChrome\": false,\n    \"isWebGLInconsistent\": false,\n    \"isAutomatedWithCDP\": true,\n    \"isAutomatedWithCDPInWebWorker\": true,\n    \"hasInconsistentClientHints\": false,\n    \"hasInconsistentGPUFeatures\": false,\n    \"isIframeOverridden\": false,\n    \"hasInconsistentWorkerValues\": false,\n    \"hasHighHardwareConcurrency\": false,\n    \"hasHeadlessChromeDefaultScreenResolution\": false,\n    \"hasSuspiciousWeakSignals\": false\n  }\n}\nHow does this test work?\n\nYou can use this page to test whether or not your bot is detected. The test is based only on fingerprinting signals:\n\nClient-side signals: Browser fingerprinting (requires JavaScript)\nServer-side signals: HTTP headers (future: TCP/TLS fingerprinting)\n\nThis test does not use IP reputation or user behavior. You can run several tests in a row; it won't affect the result.\n\nNew: We have added a new test that detects suspicious client-side behavior, such as mouse movements, typing speed, and form submission. It also detects CDP mouse leak. You can find it here.\n\n\u25b6\nDetection signals explained\n\nhasBotUserAgent: True if the User-Agent string (navigator.userAgent) matches known bot, crawler, or automation tool patterns.\n\nhasWebdriverTrue: True if navigator.webdriver is set to true, which is a direct indicator of browser automation (e.g., Selenium, Puppeteer, Playwright).\n\nhasWebdriverInFrameTrue: True if navigator.webdriver is detected as true inside an iframe.\n\nisPlaywright: True if Playwright-specific global variables or bindings (such as __pwInitScripts or __playwright__binding__) are present in the window object.\n\nhasInconsistentChromeObject: True if the window.chrome object is missing or inconsistent for a Chromium-based browser.\n\nisPhantom: True if PhantomJS-specific properties (window.callPhantom, window._phantom, or window.phantom) are detected, indicating the use of the PhantomJS headless browser.\n\nisNightmare: True if the window.__nightmare property is present, which is injected by the Nightmare.js automation framework.\n\nisSequentum: True if the Sequentum web scraping tool is detected, typically by checking if window.external contains a string with 'Sequentum'.\n\nisSeleniumChromeDefault: True if the Selenium Chrome default automation object (document.$cdc_asdjflasutopfhvcZLmcfl_) is present, which is a known Selenium signature.\n\nisHeadlessChrome: True if the browser is running in headless Chrome mode, detected by checking for headless-specific features.\n\nisWebGLInconsistent: True if the WebGL renderer or vendor information (from WebGLRenderingContext.getParameter with UNMASKED_VENDOR_WEBGL/UNMASKED_RENDERER_WEBGL) is inconsistent, missing, or spoofed.\n\nisAutomatedWithCDP: True if Chrome DevTools Protocol (CDP) automation is detected (main JavaScript execution context), cf article here.\n\nisAutomatedWithCDPInWebWorker: True if CDP automation is detected inside a web worker context (web worker execution context).\n\nhasInconsistentClientHints: True if browser client hints (like navigator.userAgentData, brands, platform, or getHighEntropyValues) are inconsistent, manipulated, or do not match the expected values for the browser.\n\nhasInconsistentGPUFeatures: True if reported GPU features (from WebGL or WebGPU APIs) do not match the expected values for the browser/device.\n\nisIframeOverridden: True if iframe behavior is overridden, such as by detecting modifications to iframe contentWindow or overridden methods, which can indicate anti-detection scripts or automation.\n\nhasInconsistentWorkerValues: True if values collected in web workers (e.g., userAgent, languages, hardwareConcurrency, platform, WebGL vendor/renderer) differ from those in the main JS context, suggesting environment spoofing.\n\nhasHighHardwareConcurrency: True if the reported number of CPU cores (navigator.hardwareConcurrency) is unusually high or inconsistent with typical consumer devices, which can be a sign of a virtualized or automated environment.\n\nhasHeadlessChromeDefaultScreenResolution: True if the screen resolution matches known defaults for headless Chrome (e.g., 800x600), which is a common signature of headless automation.\n\nhasSuspiciousWeakSignals: True if a combination of minor signals (such as subtle inconsistencies or rare values) together suggest possible automation or bot activity, even if no single signal is conclusive, cf article here.\n\nDEVICE AND BROWSER INFO\n\nAll the data you need about devices:\n\nBrowser fingerprint\nUser agent\nHTTP header"
+    },
+    {
+      "name": "sannysoft",
+      "url": "https://bot.sannysoft.com/",
+      "timestamp": "2026-02-23T07:48:17.463497+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "User Agent (Old)": {
+          "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "WebDriver (New)": {
+          "value": "missing (passed)",
+          "passed": true
+        },
+        "WebDriver Advanced": {
+          "value": "passed",
+          "passed": true
+        },
+        "Chrome (New)": {
+          "value": "present (passed)",
+          "passed": true
+        },
+        "Permissions (New)": {
+          "value": "denied",
+          "passed": true
+        },
+        "Plugins Length (Old)": {
+          "value": "3",
+          "passed": true
+        },
+        "Plugins is of type PluginArray": {
+          "value": "passed",
+          "passed": true
+        },
+        "Languages (Old)": {
+          "value": "en-US,en",
+          "passed": true
+        },
+        "WebGL Vendor": {
+          "value": "Google Inc. (Intel)",
+          "passed": true
+        },
+        "WebGL Renderer": {
+          "value": "ANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)",
+          "passed": true
+        },
+        "Broken Image Dimensions": {
+          "value": "16x16",
+          "passed": true
+        },
+        "PHANTOM_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_PROPERTIES": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_ETSL": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_LANGUAGE": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WEBSOCKET": {
+          "value": "ok",
+          "passed": true
+        },
+        "MQ_SCREEN": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_OVERFLOW": {
+          "value": "ok",
+          "passed": true
+        },
+        "PHANTOM_WINDOW_HEIGHT": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_UA": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_CHROME_OBJ": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PERMISSIONS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_PLUGINS": {
+          "value": "ok",
+          "passed": true
+        },
+        "HEADCHR_IFRAME": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_DEBUG_TOOLS": {
+          "value": "ok",
+          "passed": true
+        },
+        "SELENIUM_DRIVER": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_BATTERY": {
+          "value": "ok",
+          "passed": true
+        },
+        "CHR_MEMORY": {
+          "value": "ok",
+          "passed": true
+        },
+        "TRANSPARENT_PIXEL": {
+          "value": "ok",
+          "passed": true
+        },
+        "SEQUENTUM": {
+          "value": "ok",
+          "passed": true
+        },
+        "VIDEO_CODECS": {
+          "value": "ok",
+          "passed": true
+        },
+        "navigator.cookieEnabled": {
+          "value": "document.write(navigator.cookieEnabled);\n            true",
+          "passed": true
+        },
+        "navigator.doNotTrack": {
+          "value": "document.write(navigator.doNotTrack);\n            null",
+          "passed": true
+        },
+        "navigator.msDoNotTrack": {
+          "value": "document.write(navigator.msDoNotTrack);\n            undefined",
+          "passed": true
+        },
+        "navigator.sendBeacon": {
+          "value": "document.write(navigator.sendBeacon());",
+          "passed": true
+        },
+        "navigator.userAgent": {
+          "value": "document.write(navigator.userAgent);\n            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+          "passed": true
+        },
+        "navigator.appName": {
+          "value": "document.write(navigator.appName);\n            Netscape",
+          "passed": true
+        },
+        "navigator.vendor": {
+          "value": "document.write(navigator.vendor);\n            Google Inc.",
+          "passed": true
+        },
+        "navigator.appCodeName": {
+          "value": "document.write(navigator.appCodeName);\n            Mozilla",
+          "passed": true
+        },
+        "navigator.getUserMedia": {
+          "value": "document.write(navigator.getUserMedia());",
+          "passed": true
+        },
+        "navigator.sayswho": {
+          "value": "document.write(navigator.sayswho);\n            undefined",
+          "passed": true
+        },
+        "navigator.javaEnabled": {
+          "value": "document.write(navigator.javaEnabled());\n            false",
+          "passed": true
+        },
+        "navigator.plugins": {
+          "value": "document.write(JSON.stringify(navigator.plugins));\n            {\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}",
+          "passed": true
+        },
+        "screen.width": {
+          "value": "document.write(screen.width);\n            1680",
+          "passed": true
+        },
+        "screen.height": {
+          "value": "document.write(screen.height);\n            1050",
+          "passed": true
+        },
+        "screen.colorDepth": {
+          "value": "document.write(screen.colorDepth);\n            24",
+          "passed": true
+        },
+        "navigator.language": {
+          "value": "document.write(navigator.language);\n            en-US",
+          "passed": true
+        },
+        "navigator.loadPurpose": {
+          "value": "document.write(navigator.loadPurpose);\n            undefined",
+          "passed": true
+        },
+        "navigator.platform": {
+          "value": "document.write(navigator.platform);\n            MacIntel",
+          "passed": true
+        },
+        "navigator.mediaDevices": {
+          "value": "audioinput:  id = videoinput:  id = audiooutput:  id =",
+          "passed": true
+        },
+        "navigator.getBattery details": {
+          "value": "Charging: trueLevel: 1",
+          "passed": true
+        },
+        "Canvas1": {
+          "value": "Hash: -2012401558",
+          "passed": true
+        },
+        "Canvas2": {
+          "value": "Hash: -2012401558",
+          "passed": true
+        },
+        "Canvas3 (iframe sandbox)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        },
+        "Canvas4 (iframe sandbox)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        },
+        "Canvas5 (iframe)": {
+          "value": "Hash: -2016801316",
+          "passed": true
+        }
+      },
+      "duration_ms": 4443,
+      "page_text": "Intoli.com tests + additions\nTest Name\tResult\nUser Agent\n(Old)\n\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nWebDriver\n(New)\n\tmissing (passed)\nWebDriver Advanced\tpassed\nChrome\n(New)\n\tpresent (passed)\nPermissions\n(New)\n\tdenied\nPlugins Length\n(Old)\n\t3\nPlugins is of type PluginArray\tpassed\nLanguages\n(Old)\n\ten-US,en\nWebGL Vendor\tGoogle Inc. (Intel)\nWebGL Renderer\tANGLE (Intel, Intel(R) Iris(TM) Plus Graphics 655)\nBroken Image Dimensions\t16x16\nFingerprint Scanner tests\nPHANTOM_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\"\n}\n\nPHANTOM_PROPERTIES\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false\n     ]\n}\n\nPHANTOM_ETSL\tok\t\n{\n     \"etsl\": 33\n}\n\nPHANTOM_LANGUAGE\tok\t\n{\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ]\n}\n\nPHANTOM_WEBSOCKET\tok\t\n{}\n\nMQ_SCREEN\tok\t\n{}\n\nPHANTOM_OVERFLOW\tok\t\n{\n     \"depth\": 8842,\n     \"errorMessage\": \"Maximum call stack size exceeded\",\n     \"errorName\": \"RangeError\",\n     \"errorStacklength\": 846\n}\n\nPHANTOM_WINDOW_HEIGHT\tok\t\n{\n     \"wInnerHeight\": 1050,\n     \"wOuterHeight\": 1140,\n     \"wOuterWidth\": 1680,\n     \"wInnerWidth\": 1680,\n     \"wScreenX\": 122,\n     \"wPageXOffset\": 0,\n     \"wPageYOffset\": 0,\n     \"cWidth\": 1664,\n     \"cHeight\": 1597,\n     \"sWidth\": 1680,\n     \"sHeight\": 1050,\n     \"sAvailWidth\": 1680,\n     \"sAvailHeight\": 1004,\n     \"sColorDepth\": 24,\n     \"sPixelDepth\": 24,\n     \"wDevicePixelRatio\": 1\n}\n\nHEADCHR_UA\tok\t\n{\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\"\n}\n\nHEADCHR_CHROME_OBJ\tok\t\n{}\n\nHEADCHR_PERMISSIONS\tok\t\n{}\n\nHEADCHR_PLUGINS\tok\t\n{\n     \"plugins\": [\n          \"Chrome PDF Plugin::Portable Document Format::internal-pdf-viewer::__~~,~~,~~\",\n          \"Chrome PDF Viewer::::mhjfbmdgcfjbbpaeojofohoefgiehjai::__~~,~~,~~\",\n          \"Native Client::::internal-nacl-plugin::__~~,~~,~~\"\n     ]\n}\n\nHEADCHR_IFRAME\tok\t\n{}\n\nCHR_DEBUG_TOOLS\tok\t\n{}\n\nSELENIUM_DRIVER\tok\t\n{\n     \"attributesFound\": [\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false,\n          false\n     ]\n}\n\nCHR_BATTERY\tok\t\n{}\n\nCHR_MEMORY\tok\t\n{}\n\nTRANSPARENT_PIXEL\tok\t\n{\n     \"0\": 0,\n     \"1\": 0,\n     \"2\": 0,\n     \"3\": 0\n}\n\nSEQUENTUM\tok\t\n{}\n\nVIDEO_CODECS\tok\t\n{\n     \"h264\": \"probably\"\n}\nSome details\nnavigator.cookieEnabled\ttrue\nnavigator.doNotTrack\tnull\nnavigator.msDoNotTrack\tundefined\nnavigator.sendBeacon\t\nnavigator.cookieEnabled\ttrue\nnavigator.userAgent\tMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nnavigator.appName\tNetscape\nnavigator.vendor\tGoogle Inc.\nnavigator.appCodeName\tMozilla\nnavigator.getUserMedia\t\nnavigator.sayswho\tundefined\nnavigator.javaEnabled\tfalse\nnavigator.plugins\t{\"0\":{\"name\":\"Chrome PDF Plugin\",\"filename\":\"internal-pdf-viewer\",\"description\":\"Portable Document Format\"},\"1\":{\"name\":\"Chrome PDF Viewer\",\"filename\":\"mhjfbmdgcfjbbpaeojofohoefgiehjai\",\"description\":\"\"},\"2\":{\"name\":\"Native Client\",\"filename\":\"internal-nacl-plugin\",\"description\":\"\"}}\nscreen.width\t1680\nscreen.height\t1050\nscreen.colorDepth\t24\nnavigator.language\ten-US\nnavigator.loadPurpose\tundefined\nnavigator.platform\tMacIntel\nnavigator.mediaDevices\taudioinput: id =\nvideoinput: id =\naudiooutput: id =\n\nnavigator.getBattery details\tCharging: true\nLevel: 1\nCanvas1\t\nHash: -2012401558\n\nCanvas2\t\nHash: -2012401558\n\nCanvas3 (iframe sandbox)\t\nHash: -2016801316\n\nCanvas4 (iframe sandbox)\t\nHash: -2016801316\n\nCanvas5 (iframe)\t\nHash: -2016801316\nFp-collect info\n{\n     \"plugins\": [\n          \"Chrome PDF Plugin::Portable Document Format::internal-pdf-viewer::__~~,~~,~~\",\n          \"Chrome PDF Viewer::::mhjfbmdgcfjbbpaeojofohoefgiehjai::__~~,~~,~~\",\n          \"Native Client::::internal-nacl-plugin::__~~,~~,~~\"\n     ],\n     \"mimeTypes\": [\n          \"Portable Document Format~~application/pdf~~pdf\"\n     ],\n     \"userAgent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\",\n     \"platform\": \"MacIntel\",\n     \"languages\": [\n          \"en-US\",\n          \"en\"\n     ],\n     \"screen\": {\n          \"wInnerHeight\": 1050,\n          \"wOuterHeight\": 1140,\n          \"wOuterWidth\": 1680,\n          \"wInnerWidth\": 1680,\n          \"wScreenX\": 122,\n          \"wPageXOffset\": 0,\n          \"wPageYOffset\": 0,\n          \"cWidth\": 1664,\n          \"cHeight\": 1597,\n          \"sWidth\": 1680,\n          \"sHeight\": 1050,\n          \"sAvailWidth\": 1680,\n          \"sAvailHeight\": 1004,\n          \"sColorDepth\": 24,\n          \"sPixelDepth\": 24,\n          \"wDevicePixelRatio\": 1\n     },\n     \"touchScreen\": [\n          0,\n          false,\n          fals"
+    },
+    {
+      "name": "creepjs",
+      "url": "https://abrahamjuliot.github.io/creepjs/",
+      "timestamp": "2026-02-23T07:48:21.911698+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {
+        "headless": "63% like headless: \n\t\t\n\t\t.modal-creep-like-headless:checked ~ .modal-container {\n\t\t\tvisibility: visible;\n\t\t\topacity: 1;\n\t\t\tanimation: show 0.1s linear both;\n\t\t}\n\t\t.modal-creep-like-headless:checked ~ .modal-container .modal-content {\n\t\t\tanimation: enter 0.2s ease both\n\t\t}\n\t\t.modal-creep-like-headless:not(:checked) ~ .modal-container {\n\t\t\tvisibility: hidden;\n\t\t}\n\t\t\n\t\t\n\t\t4b5df997\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\u00d7\n\t\t\t\tLike HeadlessnoChrome: falsehasPermissionsBug: falsenoPlugins: falsenoMimeTypes: falsenotificationIsDenied: truehasKnownBgColor: trueprefersLightColor: trueuaDataIsBlank: falsepdfIsDisabled: truenoTaskbar: falsehasVvpScreenRes: truehasSwiftShader: truenoWebShare: truenoContentIndex: truenoContactsManager: truenoDownlinkMax: true",
+        "lies": "a65df655"
+      },
+      "duration_ms": 4708,
+      "page_text": "FP ID: 16694019baf98e003264ddbd5105ace2309895f3a03a0e811434ee4ad97a6305\nFuzzy: 95bc2e188c2e1f90a6498500e2644c172f03bf65d8551aff2194000000000000\n435.66 ms\nWebRTCee67e52d\nhost connection:\ncandidate:2828541628 1 udp 2113937151 5eb45e4e-a46f-42df-a907-d7b953dfe652.local 52708 typ host generation 0 ufrag L+hP network-cost 999\nfoundation/ip:\ntype & base ip: 2828541628\nip: 172.58.56.218\nsdp capabilities: 979f41d7\nstun connection:\ncandidate:4205844378 1 udp 1677729535 172.58.56.218 55379 typ srflx raddr 0.0.0.0 rport 0 generation 0 ufrag L+hP network-cost 999\ndevices (3):\nmic, audio, webcam\n8.63ms\nTimezonea65df655\nPacific Standard Time\nAmerica, Los Angeles\n-27028656422000\n480\n8.19ms\nIntl3f3bdda9\nen-US\nJuly at Pacific Daylight Time\nAmerican English\n21 million\nnext year\n0 or 1\none\n1.02ms\nHeadless8c39f1aa\nchromium: true\n63% like headless: 4b5df997\n67% headless: 0e5acff1\n60% stealth: 23e53c6a\nplatform hints:\nArial\n9:82:91:100:82\n\n0.42ms\nResistance4a35dbdb\nprivacy: unknown\nsecurity: unknown\nmode: unknown\nextension: 8c2b0e45\n382.71ms\nServiceWorkerGlobalScope\nWorkerfb246d03\nlang/timezone:\nen-US (1 US dollar)\nAmerica/Los_Angeles (480)\nconfidence: moderate\ngpu:\nGoogle Inc. (Google)\nANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)\nuserAgent:\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/145.0.7632.6 Safari/537.36\ndevice:\nMac (MacIntel)\nmacOS Catalina\ncores: 10, ram: 8\nuserAgentData:\nHeadlessChrome 145 (145.0.7632.6)\nmacOS 26.2.0 arm_64\n250.72ms\nWebGLab1101cd\nimages:2cdf344d\npixels:8bae00c6\nparams (78): 2cde96fa\nexts (64): d3e8ebec\ngpu:\nconfidence: moderate\nGoogle Inc. (Google)\nANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)\n0.02ms\nScreenfa277d50\n...screen: 1680 x 1050\n....avail: 1680 x 1024\ntouch: false\ndepth: 24|24\nviewport:\n1680\n1680\n1680\n1154\n1050\n1050\nbrowser\nlandscape\nlandscape-primary\n1\n20.81ms\nCanvas 2d9b1b4ad5\ndata: bfd1d0e0\nrendering:\ntextMetrics:\n0.025576047327220443\n\ud83d\ude00\u263a\u2668...\u2611\u2734\ud83c\udd70\n68.51ms\nFontsd948d83a\nload (18/51): Like undefined\napps: unsupported\n\"American Typewriter Semibold\", \"Apple SD Gothic Neo ExtraBold\", \"Futura Bold\", \"Helvetica Neue\", \"InaiMathi Bold\", \"Kohinoor Devanagari Medium\", \"MuktaMahee Regular\", \"Noto Sans Canadian Aboriginal Regular\", \"Noto Sans Gunjala Gondi Regular\", \"Noto Sans Masaram Gondi Regular\", \"Noto Serif Yezidi Regular\", \"PingFang HK Light\", \"STIX Two Math Regular\", \"STIX Two Text Regular\", \"SignPainter-HouseScript Semibold\", Galvji, Geneva, Luminari\n\n0.18111699100000003\n\ud83d\ude00\u263a\u2668...\u262f\u2611\u2734\n2.26ms\nDOMRectff08efa8\nelems A: 0.26037227672485364\nelems B: 0.26037227672485364\nrange A: 0.26037227672485364\nrange B: 0.26037227672485364\n0.18129797836303713\n\ud83d\ude00\u263a\u2668...\u262f\u2611\u2734\n9.74ms\nSVGRecta19bf932\nbBox: 0.06611685009002685\nchar: 0.03057584991455078\nsubs: 0.019980039978027345\ntext: 0.019980039978027345\n0.07161330368041993\n\ud83d\ude00\u263a\u2668...\u262f\u2611\u2734\n24.05ms\nAudio52ae0799\nsum: 124.04348155876505\ngain: -20.538288116455078\nfreq: 164524.5661239624\ntime: 502.599934064001\ntrap: 5.45171317125357\nunique: 4735\ndata:14b6ef01\ncopy:14b6ef01\nvalues: dfc44fc6\n0.41ms\nSpeech115fed5f\nlocal (180): a158dc36\nremote (0): unsupported\nlang (49): 3f505bf1\ndefault:\nSamantha [en-US]\n0.85ms\nMediad0ec3aa6\nmimes (10/12): 91101bd8\n5.98ms\nFeatures: 113-115+\nJS/DOM: df08a511 (v114-115)\nCSS: 379baeb6 (v114-115)\nWindow: 5475308a (v113-115)\n2.40ms\nCSS Media Queries159327d2\n@media: 6976780c\nmatchMedia: 6976780c\ntouch device: unknown\nscreen query: 1680 x 1050\n5.11ms\nComputed Style9cc3b661\nkeys (1291): 91cff83c\nsystem styles: 985b7f76\n0.25ms\nMath54cd8264\nresults: details\n0.31ms\nError92b51d39\nresults: details\n0.50ms\nWindowd93ce69f\nkeys (1212): details\n0.12ms\nHTMLElementf7381467\nkeys (339): details\n5.30ms\nNavigator7cd61ed1\nproperties (80): 61dcd4d9\ndnt: null\ngpc: unsupported\nlang: en-US, en (en-US)\nmimeTypes (1): b7a2d142\npermissions (0): 87677ba4\nplugins (3): ed8fce04\nvendor: Google Inc.\nwebgpu: unsupported\nuserAgentData:\nGoogle Chrome 122 (122.0.0.0)\nmacOS 10.15.7 x86_64\ndevice:\nMac (MacIntel)\nmacOS Catalina\ncores: 5, ram: 48, touch: 0, bluetooth\nua parsed: Chrome 122\nuserAgent:\nua reduction\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nappVersion:\n5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nStatus2d18a1de\nnetwork:\nrtt: 28, downlink: 35, max: Infinity\neffectiveType: 4g\nsaveData: false, type: wifi\nbattery:\nlevel: 100%\ncharging: true\ncharge time: fully charged\ndischarge time: charging\navailable:\nstorage: 0.83GB\n[887031487]\nmemory: 3.5GB\n[3760000000]\ntiming res:\n0.000029877311590098543\n0.000045042373585602036\nstack: 15487\nTests\nWorkers\nIframes\nFonts\nTimezone\nWindow Version\nScreen\nPrototype\nDOMRect\nEmojis\nMath\nMachine\nChrome Extensions\nJS Proxy"
+    },
+    {
+      "name": "browserscan_bot",
+      "url": "https://www.browserscan.net/bot-detection",
+      "timestamp": "2026-02-23T07:48:26.621742+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 4891,
+      "page_text": "blog\nAntidetect Browser\nUtilities\nEN\nSign In\nHome\n>\nBot Detection\nTest Results:\nRobot\nWebdriver\nUser-Agent\nCDP\nNavigator\nBrowser bot detection guide\n\nBrowserScan detects automated activities on scripts or browsers. It analyzes various browser properties to determine whether the browser environment is controlled by a robot. Various human-machine verification products such as Cloudflare Turnstile and Google reCAPTCHA include this aspect of detection, which is usually divided into three categories:Internet Software\n\nNormal bots - usually bots belonging to well-known search engines (Google, Bing, Baidu). It crawls websites to create a searchable index of content. A good bot can also be a monitoring or uptime checking tool.\nMalicious bots - Usually automated tools like Selenium, Puppeteer, Playwright or anything that pretends to be a good search bot. It can take over accounts, submit spam, steal passwords, scrape data, waste resources, and more.Discord bots.\nNo bots detected - the visitor could be a human using a regular browser.\nAd\nIdentification and bot detection\n\nThe combination of fingerprinting and bot detection gives you a powerful tool to protect against online fraud and produces the best results when used together.\n\nWebDriver\nNormal\nWebDriver Advance\nNormal\nSelenium\nNormal\nNightmareJS\nNormal\nPhantomJS\nNormal\nAwesomium\nNormal\nCef\nNormal\nCefSharp\nNormal\nCoaches\nNormal\nFMiner\nNormal\nBorn\nNormal\nPhantomas\nNormal\nRhino\nNormal\nWebdriverio\nNormal\nHeadless Chrome\nNormal\nChrome DevTools Protocol Detection\n\nDetectable use of developer tools to simulate browsers or control them via related developer protocols.Web Browsers\n\nCDP\nNormal\nDev Tool\nNormal\nNative Navigator\n\nDetect whether the Navigator is deceptive. Some browser plug-ins or robots will modify key attributes to achieve deception.\n\nvendorSub\nproductSub\n20030107\nvendor\nGoogle Inc.\nmaxTouchPoints\n0\nscheduling\n\"[object Scheduling]\"\nuserActivation\n\"[object UserActivation]\"\ngeolocation\n\"[object Geolocation]\"\ndoNotTrack\nwebkitTemporaryStorage\n\"[object DeprecatedStorageQuota]\"\nwebkitPersistentStorage\n\"[object DeprecatedStorageQuota]\"\nhardwareConcurrency\n5\ncookieEnabled\ntrue\nappCodeName\nMozilla\nappName\nNetscape\nappVersion\n5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nplatform\nMacIntel\nproduct\nGecko\nuserAgent\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\nlanguage\nen-US\nlanguages\n[ \"en-US\", \"en\" ]\nonLine\ntrue\nwebdriver\nfalse\nplugins\n\"[object PluginArray]\"\nmimeTypes\n\"[object MimeTypeArray]\"\npdfViewerEnabled\nfalse\nconnection\n{ \"downlink\": 35, \"rtt\": 28, \"effectiveType\": \"4g\", \"saveData\": false, \"type\": \"wifi\", \"downlinkMax\": null, \"onchange\": null }\ngetGamepads\nfunction getGamepads() { [native code] }\njavaEnabled\nfunction javaEnabled() { [native code] }\nsendBeacon\nfunction sendBeacon() { [native code] }\nvibrate\nfunction vibrate() { [native code] }\nwindowControlsOverlay\n\"[object WindowControlsOverlay]\"\nconstructor\nfunction Navigator() { [native code] }\ndeprecatedRunAdAuctionEnforcesKAnonymity\nfalse\nprotectedAudience\n\"[object ProtectedAudience]\"\nbluetooth\n\"[object Bluetooth]\"\nclipboard\n\"[object Clipboard]\"\ncredentials\n\"[object CredentialsContainer]\"\nkeyboard\n\"[object Keyboard]\"\nmanaged\n\"[object NavigatorManagedData]\"\nmediaDevices\n\"[object MediaDevices]\"\nserviceWorker\n\"[object ServiceWorkerContainer]\"\nvirtualKeyboard\n\"[object VirtualKeyboard]\"\nwakeLock\n\"[object WakeLock]\"\ndeviceMemory\n48\nuserAgentData\n{ \"brands\": [ { \"brand\": \"Chromium\", \"version\": \"122\" }, { \"brand\": \"Google Chrome\", \"version\": \"122\" }, { \"brand\": \"Not/A)Brand\", \"version\": \"99\" } ], \"mobile\": false, \"platform\": \"macOS\" }\nlocks\n\"[object LockManager]\"\nstorage\n\"[object StorageManager]\"\ngpu\n\"[object GPU]\"\nlogin\n\"[object NavigatorLogin]\"\nink\n\"[object Ink]\"\nmediaCapabilities\n\"[object MediaCapabilities]\"\ndevicePosture\n\"[object DevicePosture]\"\nhid\n\"[object HID]\"\nmediaSession\n\"[object MediaSession]\"\npermissions\n\"[object Permissions]\"\npresentation\n\"[object Presentation]\"\nserial\n\"[object Serial]\"\nusb\n\"[object USB]\"\nxr\n\"[object XRSystem]\"\nstorageBuckets\n\"[object StorageBucketManager]\"\nadAuctionComponents\nfunction adAuctionComponents() { [native code] }\nrunAdAuction\nfunction runAdAuction() { [native code] }\ncanLoadAdAuctionFencedFrame\nfunction canLoadAdAuctionFencedFrame() { [native code] }\nclearAppBadge\nfunction clearAppBadge() { [native code] }\ngetBattery\nfunction getBattery() { [native code] }\ngetUserMedia\nfunction getUserMedia() { [native code] }\nrequestMIDIAccess\nfunction requestMIDIAccess() { [native code] }\nrequestMediaKeySystemAccess\nfunction requestMediaKeySystemAccess() { [native code] }\nsetAppBadge\nfunction setAppBadge() { [native code] }\nwebkitGetUserMedia\nfunction webkitGetUserMedia() { [native code] }\nclearOriginJoinedAdInterestGroups\nfunction clearOriginJoinedAdInterestGroups() { [native code] }\ncreateAuctionNonce\nfunction createAuctionNonce() { [native code] }\njoinAdI"
+    },
+    {
+      "name": "browserscan_tls",
+      "url": "https://www.browserscan.net/tls",
+      "timestamp": "2026-02-23T07:48:31.530799+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 4718,
+      "page_text": "blog\nAntidetect Browser\nUtilities\nEN\nSign In\nHome\n>\nHTTP2/SSL/TLS Fingerprint Detection\nHTTP/2 browser fingerprinting identifies web clients by analyzing specific HTTP/2 attributes, such as the values of SETTINGS frames, WINDOW_UPDATE frames, stream priorities, and the order of pseudo-header fields. It generates an Akamai format http fingerprint. This fingerprint can identify requests from malicious scripts.\nHTTP User Agent\n\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36\n\nHTTP Protocol\n\nh2\n\nHTTP/2 Fingerprint\nAkamai Hash\n\n52d84b11737d980aef856699f885ca86\n\nAkamai Text\n\n1:65536;2:0;4:6291456;6:262144|15663105|0|m,a,s,p\n\nThe following demonstrates the SSL/TLS capabilities of your web browser, including supported TLS protocols, cipher suites, extensions, and key exchange groups. It also generates a TLS fingerprint in JA3 and JA4 formats. This fingerprint can also identify requests from malicious scripts.\nTLS Fingerprint\nJA3\n\n771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,18-0-45-27-11-5-51-43-65281-16-23-17613-10-35-65037-13,4588-29-23-24,0\n\nJA3 Hash\n\n8baeffd26047e6412d6bf26e0167151c\n\nJA4\n\nt13d1516h2_8daaf6152771_5f6bef2f8a77\n\nFingerprint Hash\n\n22b27f1dd9ac0c215fcb339d420f636b\n\nTLS handshake\nTLS protocol\n\nTLS 1.3\n\nSETTINGS Frame:\n\nLength\th2\nSettings\tHEADER_TABLE_SIZE = 65536\nENABLE_PUSH = 0\nINITIAL_WINDOW_SIZE = 6291456\nMAX_HEADER_LIST_SIZE = 262144\n\nWINDOW UPDATE Frame:\n\nLength\t4\nwindow update increment\t15663105\n\nHEADERS Frame:\n\nLength\t398\nStream ID\t1\nHeaders\t:method\tGET\n:authority\ttls.browserscan.net\n:scheme\thttps\n:path\t/api/tls\npragma\tno-cache\ncache-control\tno-cache\nsec-ch-ua-platform\t\"macOS\"\nuser-agent\tAmazon CloudFront\nsec-ch-ua\t\"Not:A-Brand\";v=\"99\", \"HeadlessChrome\";v=\"145\", \"Chromium\";v=\"145\"\naccept-language\ten-US\nsec-ch-ua-mobile\t?0\naccept\t*/*\norigin\thttps://www.browserscan.net\nsec-fetch-site\tsame-origin\nsec-fetch-mode\tcors\nsec-fetch-dest\tempty\nreferer\thttps://www.browserscan.net/\naccept-encoding\tgzip\npriority\tu=1, i\nx-nginx-proxy\ttrue\nx-real-ip\t100.122.20.139\nx-forwarded-for\t172.59.227.114, 64.252.104.170, 100.122.20.139\nhost\twww.browserscan.net\nx-forwarded-proto\thttp\nconnection\tclose\nremoteip\t64.252.104.170\ncookie\tFCCDCF=%5Bnull%2Cnull%2Cnull%2Cnull%2Cnull%2Cnull%2C%5B%5B32%2C%22%5B%5C%22db0f67b7-4862-46e5-8c44-306615392d77%5C%22%2C%5B1771832910%2C49000000%5D%5D%22%5D%2C%5B13%2C%22%5B%5C%22DBABL~BVQqAAAAAg%5C%22%2C%5B%5B7%2C%5B1771832910%2C192068000%5D%5D%5D%5D%22%5D%5D%5D; __Host-next-auth.csrf-token=bacc3548abe2cbf7999274b123b74d5222317ef06bd261f6f2ed06826c59137c%7Cc3e2681bed89392675790318a826f4725d464d637015e7b1bc39b208f037fa1d; __Secure-next-auth.callback-url=https%3A%2F%2Fwww.browserscan.net; _ga=GA1.1.2105237445.1771832908; _ga_YEXKJRVLPZ=GS2.1.s1771832908$o1$g0$t1771832911$j57$l0$h0; i18n_redirected=en\nvia\t2.0 6baae223a8a0bac3ed58b2661c840b8e.cloudfront.net (CloudFront)\nx-amz-cf-id\tArET_exhVFGzmaTPJlgizqL6SYWKupkeeX3oTWi9HS7H7Do0JNDoJg==\nsentry-trace\tfc1e0935a97a41c89b7b4cb25f7d39df-8ef36c955f64933f-0\nbaggage\tsentry-environment=pro,sentry-public_key=d73c552868a1b847e01b700daad218d1,sentry-trace_id=fc1e0935a97a41c89b7b4cb25f7d39df,sentry-transaction=%2Ftls,sentry-sampled=false,sentry-sample_rand=0.6408821854089995,sentry-sample_rate=0.01\nFlags\tEndStream (0x1)\nEndHeaders (0x4)\nPriority (0x20)\nWeight\t220\nStream Dependency\t0\nExclusive\t1\nCipher suites supported (in order received)\nCipher Suites\t0xCACA\t\nGREASE\n\n0x1301\t\nTLS_AES_128_GCM_SHA256recommended\ntls1.3\n\n0x1302\t\nTLS_AES_256_GCM_SHA384recommended\ntls1.3\n\n0x1303\t\nTLS_CHACHA20_POLY1305_SHA256recommended\ntls1.3\n\n0xC02B\t\nTLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256recommended\ntls1.2, tls1.3\n\n0xC02F\t\nTLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256secure\ntls1.2, tls1.3\n\n0xC02C\t\nTLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384recommended\ntls1.2, tls1.3\n\n0xC030\t\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384secure\ntls1.2, tls1.3\n\n0xCCA9\t\nTLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256recommended\ntls1.2, tls1.3\n\n0xCCA8\t\nTLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256secure\ntls1.2, tls1.3\n\n0xC013\t\nTLS_ECDHE_RSA_WITH_AES_128_CBC_SHAweak\ntls1.0, tls1.1, tls1.2, tls1.3\n\n0xC014\t\nTLS_ECDHE_RSA_WITH_AES_256_CBC_SHAweak\ntls1.0, tls1.1, tls1.2, tls1.3\n\n0x9C\t\nTLS_RSA_WITH_AES_128_GCM_SHA256weak\ntls1.2, tls1.3\n\n0x9D\t\nTLS_RSA_WITH_AES_256_GCM_SHA384weak\ntls1.2, tls1.3\n\n0x2F\t\nTLS_RSA_WITH_AES_128_CBC_SHAweak\ntls1.0, tls1.1, tls1.2, tls1.3\n\n0x35\t\nTLS_RSA_WITH_AES_256_CBC_SHAweak\ntls1.0, tls1.1, tls1.2, tls1.3\nTLS extensions supported (in order received)\nTLS Extensions\t0xDADA\tGREASE\n0x0012\tsigned_certificate_timestamp\n0x0000\tserver_name\n0x002D\tpsk_key_exchange_modes\n0x001B\tcompress_certificate\n0x000B\tec_point_formats\n0x0005\tstatus_request\n0x0033\tkey_share\n0x002B\tsupported_versions\n0xFF01\textensionRenegotiationInfo (boringssl)\n0x0010\tapplication_layer_protocol_negotiation\n0x0017\textended_master_secret\n0x44CD\tUnknown extension 17613\n0x000A\tsupported_groups\n0x0023\tsession_ticket\n0xFE0D\textensionEncryptedCli"
+    },
+    {
+      "name": "pixelscan",
+      "url": "https://pixelscan.net/bot-check",
+      "timestamp": "2026-02-23T07:48:36.261215+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 6437,
+      "page_text": "\u00d7\nJOIN PIXELSCAN COMMUNITY ON TELEGRAM\nProducts\nResources\nSpecial Offers\nCompany\nAI Automation\nFingerprint Check\n\nVerify your browser fingerprint\n\nCHECKERS\nIP Address Check\n\nSee your IP details\n\nIP Blacklist Check\n\nReviewing blacklist agent\n\nProxy Check\n\nChecking proxy strength\n\nBot Verification\n\nVerify that a user is a human\n\nVPN Check\n\nTest and see the expected security\n\nTOOLS\nDNS Leak Test\n\nSecuring your DNS tunnel\n\nWebRTC Leak Test\n\nSecuring your WebRTC tunnel\n\nLocation Info\n\nProvide accurate location\n\nCookie Converter\n\nConvert Cookies into JSON\n\nRESOURCES\nPixelscan Blog\n\n330+ useful articles\n\nGUIDES\nUltimate Antidetect Guide\nProxy Best Practices\nBEST PROXIES\nBest Proxy Providers\nBest Residential Proxies\nBest Mobile Proxies\nBest Telegram Proxies\nBest Chinese Proxies\nRECOMMENDED TOOLS\nBest Anti-Detect Browsers\nBest Cloud Phones Providers\nBest Tools To Avoid IP Ban\nBest Captcha Solvers\nPhone Farming\nPixelscan Partners\n\nGet exclusive discounts from top services\n\nBEST DEALS\n-50% OFF Multilogin\n\nReliable antidetect browser\n\nExtra 3 GB For NodeMaven\n\nStable and undetectable proxies\n\nCOMPANY INFO\nAbout Pixelscan\nContact Us\nBot Detection Test\nStart\nCheck if your browser is behaving like a real user or an automated bot.\nYour results: Bot Detected \n\nYour activity was flagged by our bot detection system as highly likely to be automated. This can happen if your setup isn\u2019t properly configured. To reduce detection risk, refine your fingerprint settings, align proxy details, or test with a different configuration.\u00a0\n\nDetection Signals\nNavigator\nResult:\nFail\nSuspicious\nWebdriver\nResult:\nPass\nNormal\nCDP\nResult:\nFail\nSuspicious\nUser Agent\nResult:\nPass\nNormal\nShow technical details\nNavigator\nWebdriver\nCDP\nUser Agent\nPlugins:\nNormal\nLanguages:\nNormal\nadAuctionComponents:\nNormal\nappCodeName:\nNormal\nappName:\nNormal\nappVersion:\nNormal\nbluetooth:\nNormal\ncanLoadAdAuctionFencedFrame:\nNormal\nclearAppBadge:\nNormal\nclearOriginJoinedAdInterestGroups:\nNormal\nclipboard:\nNormal\nconnection:\nDetected\nconstructor:\nNormal\ncookieEnabled:\nNormal\ncreateAuctionNonce:\nNormal\ncredentials:\nNormal\ndeprecatedReplaceInURN:\nNormal\ndeprecatedRunAdAuctionEnforcesKAnonymity:\nNormal\ndeprecatedURNToURL:\nNormal\ndeviceMemory:\nDetected\ndevicePosture:\nNormal\ndoNotTrack:\nNormal\ngeolocation:\nNormal\ngetBattery:\nNormal\ngetGamepads:\nNormal\ngetInstalledRelatedApps:\nNormal\ngetInterestGroupAdAuctionData:\nNormal\ngetUserMedia:\nNormal\ngpu:\nNormal\nhardwareConcurrency:\nDetected\nhid:\nNormal\nink:\nNormal\njavaEnabled:\nNormal\njoinAdInterestGroup:\nNormal\nkeyboard:\nNormal\nlanguage:\nDetected\nlanguages:\nDetected\nleaveAdInterestGroup:\nNormal\nlocks:\nNormal\nlogin:\nNormal\nmanaged:\nNormal\nmaxTouchPoints:\nNormal\nmediaCapabilities:\nNormal\nmediaDevices:\nNormal\nmediaSession:\nNormal\nmimeTypes:\nDetected\nonLine:\nNormal\npdfViewerEnabled:\nNormal\npermissions:\nNormal\nplatform:\nDetected\nplugins:\nDetected\npresentation:\nNormal\nproduct:\nNormal\nproductSub:\nNormal\nprotectedAudience:\nNormal\nregisterProtocolHandler:\nNormal\nrequestMIDIAccess:\nNormal\nrequestMediaKeySystemAccess:\nNormal\nrunAdAuction:\nNormal\nscheduling:\nNormal\nsendBeacon:\nNormal\nserial:\nNormal\nserviceWorker:\nNormal\nsetAppBadge:\nNormal\nstorage:\nNormal\nstorageBuckets:\nNormal\nunregisterProtocolHandler:\nNormal\nupdateAdInterestGroups:\nNormal\nusb:\nNormal\nuserActivation:\nNormal\nuserAgent:\nNormal\nuserAgentData:\nNormal\nvendor:\nNormal\nvendorSub:\nNormal\nvibrate:\nNormal\nvirtualKeyboard:\nNormal\nwakeLock:\nNormal\nwebdriver:\nNormal\nwebkitGetUserMedia:\nNormal\nwebkitPersistentStorage:\nNormal\nwebkitTemporaryStorage:\nNormal\nwindowControlsOverlay:\nNormal\nxr:\nNormal\nCheck out other tools\n\nFingerprint Check\n\nVerify your browser fingerprint\n\nIP Address Check\n\nSee your IP details\n\nVPN Check\n\nTest the expected security\n\nIP Blacklist Check\n\nReviewing blacklist agent\n\nFrequently Asked Questions\nWhat is Bot Detection?\nA bot detection test determines whether your browser profile or automation setup behaves like a real user or gets flagged as a bot. Pixelscan analyzes fingerprints, behavior patterns, and connection details to reveal how detection systems might see your setup.\nHuman Detected means your environment looks natural, and no suspicious activity has been flagged.\nBot Detected means your setup or automation workflow might be considered automated or bot-like by the target platforms you're working with. This often happens when the configuration is off\u2014such as running in headless mode, using default settings, or combining mismatched fingerprints and proxies.\nWhich bot detection tools does Pixelscan use?\nCan I use this tool to check if my browser profile or scraping setup looks like a bot?\nHow can I run a bot test online?\nContact us for collaboration\npartners@pixelscan.net\nCHECKERS\nFingerprint\nIP check\nIP blacklist check\nProxy checker\nBot checker\nVPN Check\nTOOLS\nDNS leak test\nWebRTC leak test\nLocation\nCookie converter\nPIXELSCAN\nBlog\nPartners\nAbout Pixelscan\nBounty program\nDonate\nTelegram community\nBEST PROXIES\nBest Proxy Providers\nBest Residential Proxies\nBest Mobile "
+    },
+    {
+      "name": "incolumitas",
+      "url": "https://bot.incolumitas.com/",
+      "timestamp": "2026-02-23T07:48:42.704769+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 6337,
+      "page_text": "Curated List of Bot / Headless Chrome Detection Tests\n\n\ud83d\ude80 v0.6.3 (6th June 2024) \ud83d\ude80 [Changelog]\n\nUse with Puppeteer\nUse with Playwright\nUse with Google Chrome\nUse with Advanced Bot\nUse with Selenium\n\nThis page attempts to detect if you are a Bot or Not. The tests are constantly kept up to date, please check the changelog here.\n\nTable of Contents\nBehavioral Classification\nMore Sources and Links\nBot Challenge\nNew Detection Tests\nOld Detection Tests\nIP Address API\nProxy/VPN Detection Tests\nHttp Headers\nTCP/IP Fingerprint\nTLS Fingerprint\nBrowser Fingerprint\nCanvas Fingerprint\nWebGL Fingerprint\nWeb Worker\nService Worker\nBrowser Data\nBehavioral Bot Classification\n\nThe test behavioralClassificationScore gives a rating between 0 (Bot) and 1 (Human) based on advanced behavioral heuristics. A score below 0.5 means that you are most likely a bot.\n\nThe first score is computed after 1,5 seconds of browsing on this site. Then, the behavioral score is updated after 4 seconds, 7 seconds, 10 seconds and 15 seconds.\n\nDon't worry if you are browsing this page and you are given a score between 0.7 and 1.0, the behavioralClassificationScore consist of 30+ individual classificators and it is normal that there are false positives.\n\nIn order to test your bot with a real world problem, your bot has to solve the challenge below.\n\nYour Behavioral Score: ...\nMore Sources/Information\nExpand all Sources / Links\nBot Challenge\n\nYour bot has to fill out the form below and submit it. Then you are prompted to confirm the pop-up dialoge. After confirmation, you will see a table with basket items and prices. Update the prices of this table and scrape the data as a final step.\n\nCompleting all those steps provides enough behaviroal information in order to classify you as BotOrNot.\n\nShow Code to Solve The Bot Challenge\nBot Challenge\nUsername\n\nEmail\n\nNumber of Cookies\nOne Cookie\nTwo Cookies\nThree Cookies\nI want all the Cookies\n I agree to the terms and conditions\n I like Cats  I like big Cats\n\nSubmit\nNew Detection Tests [1] [2] [3] [4]\n{\n  \"puppeteerEvaluationScript\": \"OK\",\n  \"webdriverPresent\": \"OK\",\n  \"connectionRTT\": \"OK\",\n  \"puppeteerExtraStealthUsed\": \"OK\",\n  \"inconsistentWebWorkerNavigatorPropery\": \"OK\",\n  \"inconsistentServiceWorkerNavigatorPropery\": \"FAIL\"\n}\nOld Bot Detection Tests (Intoli.com tests + additions, Fingerprint Scanner tests)\n{\n  \"intoli\": {\n    \"userAgent\": \"OK\",\n    \"webDriver\": \"OK\",\n    \"webDriverAdvanced\": \"OK\",\n    \"pluginsLength\": \"OK\",\n    \"pluginArray\": \"OK\",\n    \"languages\": \"OK\"\n  },\n  \"fpscanner\": {\n    \"PHANTOM_UA\": \"OK\",\n    \"PHANTOM_PROPERTIES\": \"OK\",\n    \"PHANTOM_ETSL\": \"OK\",\n    \"PHANTOM_LANGUAGE\": \"OK\",\n    \"PHANTOM_WEBSOCKET\": \"OK\",\n    \"MQ_SCREEN\": \"OK\",\n    \"PHANTOM_OVERFLOW\": \"OK\",\n    \"PHANTOM_WINDOW_HEIGHT\": \"OK\",\n    \"HEADCHR_UA\": \"OK\",\n    \"WEBDRIVER\": \"FAIL\",\n    \"HEADCHR_CHROME_OBJ\": \"OK\",\n    \"HEADCHR_PERMISSIONS\": \"OK\",\n    \"HEADCHR_PLUGINS\": \"OK\",\n    \"HEADCHR_IFRAME\": \"OK\",\n    \"CHR_DEBUG_TOOLS\": \"OK\",\n    \"SELENIUM_DRIVER\": \"OK\",\n    \"CHR_BATTERY\": \"OK\",\n    \"CHR_MEMORY\": \"OK\",\n    \"TRANSPARENT_PIXEL\": \"OK\",\n    \"SEQUENTUM\": \"OK\",\n    \"VIDEO_CODECS\": \"OK\"\n  }\n}\nIP Address API [1] [2]\n\nI maintain a public IP API that can also be used to check whether an IP address belongs to a data center IP address range such as Azure, AWS, Digitalocean, Google Cloud Platform and many other cloud providers. Please read the full blog article for more a thorough introduction.\n\n{\n  \"ip\": \"172.59.227.114\",\n  \"rir\": \"ARIN\",\n  \"is_bogon\": false,\n  \"is_mobile\": false,\n  \"is_satellite\": false,\n  \"is_crawler\": false,\n  \"is_datacenter\": false,\n  \"is_tor\": false,\n  \"is_proxy\": false,\n  \"is_vpn\": false,\n  \"is_abuser\": false,\n  \"company\": {\n    \"name\": \"T-Mobile USA, Inc.\",\n    \"abuser_score\": \"0.0004 (Very Low)\",\n    \"domain\": \"t-mobile.com\",\n    \"type\": \"isp\",\n    \"network\": \"172.32.0.0 - 172.63.255.255\",\n    \"whois\": \"https://api.ipapi.is/?whois=172.32.0.0\"\n  },\n  \"abuse\": {\n    \"name\": \"T-Mobile USA, Inc.\",\n    \"address\": \"12920 SE 38th Street, Bellevue, WA, 98006, US\",\n    \"email\": \"abuse@t-mobile.com\",\n    \"phone\": \"+1-888-662-4662\"\n  },\n  \"asn\": {\n    \"asn\": 21928,\n    \"abuser_score\": \"0.0001 (Very Low)\",\n    \"route\": \"172.59.224.0/21\",\n    \"descr\": \"T-MOBILE-AS21928 - T-Mobile USA, Inc., US\",\n    \"country\": \"us\",\n    \"active\": true,\n    \"org\": \"T-Mobile USA, Inc.\",\n    \"domain\": \"t-mobile.com\",\n    \"abuse\": \"abuse@t-mobile.com\",\n    \"type\": \"isp\",\n    \"created\": \"2002-06-12\",\n    \"updated\": \"2012-02-24\",\n    \"rir\": \"ARIN\",\n    \"whois\": \"https://api.ipapi.is/?whois=AS21928\"\n  },\n  \"location\": {\n    \"is_eu_member\": false,\n    \"calling_code\": \"1\",\n    \"currency_code\": \"USD\",\n    \"continent\": \"NA\",\n    \"country\": \"United States\",\n    \"country_code\": \"US\",\n    \"state\": \"Colorado\",\n    \"city\": \"Denver\",\n    \"latitude\": 39.73915,\n    \"longitude\": -104.9847,\n    \"zip\": \"80299\",\n    \"timezone\": \"America/Denver\",\n    \"local_time\": \"2026-02-23T00:48:45-07:00\",\n    \"local_time_unix\": 1771832925,\n    \"is_dst\": false\n  },\n  \"elaps"
+    },
+    {
+      "name": "fingerprint_botd",
+      "url": "https://demo.fingerprint.com/bot-firewall",
+      "timestamp": "2026-02-23T07:48:49.043524+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 4196,
+      "page_text": "Home\nPlayground\nUse cases\nRestart\nContact sales\nGet started\nBot Firewall Test\n\nIntegrate Fingerprint Bot Detection with your Web Application Firewall and dynamically block IP addresses linked to past bot visits.\n\nFingerprint Bot Detection allows you to identify sophisticated bots and headless browsers by collecting and analyzing browser signals. See our Web scraping demo for an example of protecting client-site content from bots. This demo goes a step further. It uses Bot Detection results to block previously recognized bots on their next visit completely \u2014 before they even reach your web page.\n\nSee on GitHub\nSee technical tutorial\nHow to use this demo\nUse a locally running instance of Playwright, Cypress, or another headless browser tool to visit the web scraping demo. See the demo tutorial for an example.\nYour headless browser will be recognized as a bot, and your IP address will be saved to the bot visit database displayed below.\nClick Block this IP to prevent the bot from loading the page at all going forward. For demo purposes, you are only allowed to block your own IP.\nTry visiting the web scraping demo again (either as a bot or using your regular browser).\nYour IP address is blocked from the page completely.\nNOTE\nFor the purposes of this demo, you can only block/unblock your own IP address (undefined). The block expires after one hour. The database of bot visits is cleared on every website update.\nSee related resources\nBots detected on Web scraping demo\nLoading \u23f3\nWe recommend reading the instructions before trying the demo!\nTimestamp \tRequest ID\tBot Type \tIP Address\tAction\nFeb 22 11:33 PM\t1771832027557.YMmvys\tBad (Webdriver)\t74.249.78.163\t\nN/A\n\nFeb 22 11:30 PM\t1771831805799.FZ8Whv\tBad (Webdriver)\t74.249.78.163\t\nN/A\n\nFeb 22 11:29 PM\t1771831796445.5ZEX9D\tBad (Webdriver)\t74.249.78.163\t\nN/A\n\nFeb 22 11:29 PM\t1771831790315.JTOJR9\tBad (Webdriver)\t74.249.78.163\t\nN/A\n\nFeb 22 10:35 PM\t1771828538595.XKuEXe\tBad (Webdriver)\t64.236.177.97\t\nN/A\n\nFeb 22 10:31 PM\t1771828317941.6SXao8\tBad (Webdriver)\t64.236.177.97\t\nN/A\n\nFeb 22 10:31 PM\t1771828307045.CStZmP\tBad (Webdriver)\t64.236.177.97\t\nN/A\n\nFeb 22 10:31 PM\t1771828300828.4CWGwR\tBad (Webdriver)\t64.236.177.97\t\nN/A\n\nFeb 22 09:40 PM\t1771825203721.UYfZrO\tBad (Webdriver)\t40.65.56.224\t\nN/A\n\nFeb 22 09:36 PM\t1771824969127.QEKW76\tBad (Webdriver)\t40.65.56.224\t\nN/A\nShow older bot visits\nLearn more\nUSE CASE TUTORIAL\nWeb Scraping Prevention\nARTICLE\nBetting Bots\n1440 W. Taylor St #735, Chicago, IL 60607, USA\n\u00a9 FingerprintJS 2022, Inc"
+    },
+    {
+      "name": "cloudflare_turnstile",
+      "url": "https://seleniumbase.io/apps/turnstile",
+      "timestamp": "2026-02-23T07:48:53.243382+00:00",
+      "status": "completed",
+      "error": null,
+      "results": {},
+      "duration_ms": 4275,
+      "page_text": "\n\n\nCloudflare Turnstile Test\n\n\n"
+    }
+  ]
+}
