@@ -36,7 +36,7 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/example/stealth-browser"
+Homepage = "https://github.com/ejmockler/stealth-browser"
 
 [build-system]
 requires = ["hatchling"]
