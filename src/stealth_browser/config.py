@@ -93,15 +93,17 @@ class BrowserConfig:
 
     PLATFORMS: Dict[str, Dict[str, Any]] = {
         "windows": {
+            # Chrome-only UAs — Firefox/Safari/Edge UAs are invalid for
+            # Chromium-based engines and create TLS fingerprint mismatches.
+            # Note: Patchright overrides these with the actual browser version
+            # at launch time for perfect UA ↔ TLS coherence.
             "user_agents": [
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+                "(KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0",
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) "
-                "Gecko/20100101 Firefox/122.0",
+                "(KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
             ],
             "platform": "Win32",
             "window_size": "--window-size=1920,1080",
@@ -127,13 +129,11 @@ class BrowserConfig:
         "macos": {
             "user_agents": [
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
-                "(KHTML, like Gecko) Version/17.2 Safari/605.1.15",
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:122.0) "
-                "Gecko/20100101 Firefox/122.0",
+                "(KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
             ],
             "platform": "MacIntel",
             "window_size": "--window-size=1680,1050",

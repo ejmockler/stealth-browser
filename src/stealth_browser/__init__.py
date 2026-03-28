@@ -1,24 +1,26 @@
 """Stealth Browser - Anti-detection browser automation.
 
-Two parallel drivers:
-- Selenium (StealthBrowser) — existing, proven path
-- Patchright (create_stealth_browser) — CDP-leak-free path via patched Playwright
+Two engines, one API:
+- **Patchright** (default when installed) — CDP-leak-free via patched Playwright
+- **Selenium** — fallback, proven path
 
-Both share config.py (fingerprint pools) and scripts.py (JS injection).
+Install the stronger engine::
 
-Selenium usage:
+    pip install 'stealth-browser[patchright]'
+
+Usage::
+
     from stealth_browser import StealthBrowser
 
-    with StealthBrowser() as browser:
+    with StealthBrowser() as browser:          # auto-selects best engine
         browser.navigate("https://example.com")
 
-Patchright usage:
-    from stealth_browser.patchright import create_stealth_browser, create_stealth_context
+    with StealthBrowser(engine="selenium") as browser:  # force Selenium
+        ...
 
-    async with await create_stealth_browser() as browser:
-        context = await create_stealth_context(browser)
-        page = await context.new_page()
-        await page.goto("https://example.com")
+Direct async Patchright access is still available::
+
+    from stealth_browser.patchright import create_stealth_browser, ...
 """
 
 from stealth_browser.browser import StealthBrowser
@@ -32,14 +34,32 @@ from stealth_browser.config import (
 )
 from stealth_browser.scripts import StealthScripts
 from stealth_browser.exceptions import BrowserError, NavigationError, ElementNotFoundError
+from stealth_browser.element import StealthElement
+from stealth_browser.selectors import (
+    CSS_SELECTOR,
+    XPATH,
+    ID,
+    CLASS_NAME,
+    NAME,
+    TAG_NAME,
+    LINK_TEXT,
+    PARTIAL_LINK_TEXT,
+)
+from stealth_browser.engine_selection import patchright_available
 
-__version__ = "0.2.0"
+PATCHRIGHT_AVAILABLE: bool = patchright_available()
+
+__version__ = "0.3.0"
 
 __all__ = [
-    # Selenium path
+    # Core
     "StealthBrowser",
+    "StealthElement",
+    # Engine detection
+    "PATCHRIGHT_AVAILABLE",
+    # Legacy — Selenium-specific
     "DriverManager",
-    # Shared config
+    # Config
     "BrowserConfig",
     "PlatformConfig",
     "HardwareConfig",
@@ -50,4 +70,13 @@ __all__ = [
     "BrowserError",
     "NavigationError",
     "ElementNotFoundError",
+    # Selector strategies
+    "CSS_SELECTOR",
+    "XPATH",
+    "ID",
+    "CLASS_NAME",
+    "NAME",
+    "TAG_NAME",
+    "LINK_TEXT",
+    "PARTIAL_LINK_TEXT",
 ]
