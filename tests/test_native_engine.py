@@ -52,6 +52,7 @@ class TestExtensionGeneration:
             "background.js",
             "offscreen.html",
             "offscreen.js",
+            "stealth.js",
             "content.js",
         }
 
@@ -71,20 +72,14 @@ class TestExtensionGeneration:
         assert "54321" in files["offscreen.js"]
         assert "__WS_PORT__" not in files["offscreen.js"]
 
-    def test_stealth_js_embedded_in_content(self):
+    def test_stealth_js_in_stealth_file(self):
         from stealth_browser.native.extension import generate_extension
 
         marker = "UNIQUE_TEST_MARKER_12345"
         files = generate_extension(ws_port=1, stealth_js=marker)
-        assert marker in files["content.js"]
-
-    def test_stealth_js_special_chars_escaped(self):
-        from stealth_browser.native.extension import generate_extension
-
-        tricky = 'backtick ` template ${expr} quotes "\' newline\n end'
-        files = generate_extension(ws_port=1, stealth_js=tricky)
-        # Should not cause JS syntax errors — the stealth JS is JSON-encoded
-        assert "JSON.parse(" in files["content.js"]
+        # Stealth JS is now in stealth.js (MAIN world), not content.js
+        assert marker in files["stealth.js"]
+        assert "__dialogLog" in files["stealth.js"]
 
 
 class TestHumanMovement:

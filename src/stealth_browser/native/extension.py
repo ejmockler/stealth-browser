@@ -33,7 +33,8 @@ def generate_extension(ws_port: int, stealth_js: str) -> dict[str, str]:
         "background.js": _build_background(ws_port),
         "offscreen.html": _build_offscreen_html(),
         "offscreen.js": _build_offscreen_js(ws_port),
-        "content.js": _build_content(stealth_js),
+        "stealth.js": _build_stealth_file(stealth_js),
+        "content.js": _build_content(),
     }
 
 
@@ -107,6 +108,21 @@ async function ensureOffscreen() {
   }
 }
 ensureOffscreen();
+
+// --- Register stealth JS in MAIN world (bypasses CSP) ---
+// <script> tag injection from content scripts is blocked by CSP on many sites.
+// chrome.scripting.registerContentScripts injects at the engine level.
+chrome.scripting.registerContentScripts([{
+  id: 'stealth-main-world',
+  matches: ['<all_urls>'],
+  js: ['stealth.js'],
+  runAt: 'document_start',
+  world: 'MAIN',
+  allFrames: true,
+  matchOriginAsFallback: true
+}]).catch(function() {
+  // Already registered (service worker restarted)
+});
 
 // Keepalive to prevent SW termination
 chrome.alarms.create('keepalive', {periodInMinutes: 0.25});
@@ -263,219 +279,173 @@ connect();
 
 
 # ------------------------------------------------------------------
-# content.js (dynamic — stealth JS embedded)
+# stealth.js (MAIN world — registered via chrome.scripting)
 # ------------------------------------------------------------------
 
-def _build_content(stealth_js: str) -> str:
-    # JSON-encode the stealth JS so all special characters (backticks,
-    # quotes, template literals, newlines, etc.) are safely escaped.
-    # In content.js we use: script.textContent = JSON.parse(<encoded>);
-    encoded_stealth = json.dumps(stealth_js)
+def _build_stealth_file(stealth_js: str) -> str:
+    """Build the MAIN world script: dialog handler + stealth JS.
 
-    return f'''\
-// content.js — Stealth Bridge content script
-// Runs at document_start in all frames.
+    This file is injected into the page's MAIN world via
+    chrome.scripting.registerContentScripts (not a <script> tag),
+    which bypasses CSP restrictions.
+    """
+    dialog_handler = """\
+// Dialog auto-accept (before any page script caches a reference)
+window.__dialogLog = [];
+window.confirm = function(msg) {
+  window.__dialogLog.push({type:'confirm', message:msg, time:Date.now()});
+  return true;
+};
+window.alert = function(msg) {
+  window.__dialogLog.push({type:'alert', message:msg, time:Date.now()});
+};
+window.prompt = function(msg, def) {
+  window.__dialogLog.push({type:'prompt', message:msg, time:Date.now()});
+  return def || '';
+};
+"""
+    return dialog_handler + "\n" + stealth_js
 
-// =============================================
-// 1. SCREEN COORDINATE HELPER
-//    Queries LIVE values each time (not cached from document_start,
-//    because the window may not be positioned yet at that point).
-// =============================================
-function __getScreenCoords(el) {{
-  const rect = el.getBoundingClientRect();
-  // Chrome UI height: tabs + address bar + bookmarks bar
-  const chromeHeight = window.outerHeight - window.innerHeight;
-  return {{
+
+# ------------------------------------------------------------------
+# content.js (isolated world — DOM commands only)
+# ------------------------------------------------------------------
+
+def _build_content() -> str:
+    return _CONTENT_TEMPLATE
+
+
+_CONTENT_TEMPLATE = r"""
+// content.js — Stealth Bridge content script (isolated world)
+// Stealth JS runs in MAIN world via chrome.scripting.registerContentScripts.
+// This script handles DOM queries and coordinate mapping only.
+
+function __getScreenCoords(el) {
+  var rect = el.getBoundingClientRect();
+  var chromeHeight = window.outerHeight - window.innerHeight;
+  return {
     x: Math.round(window.screenX + rect.left + rect.width / 2),
     y: Math.round(window.screenY + chromeHeight + rect.top + rect.height / 2),
     width: rect.width,
     height: rect.height
-  }};
-}}
+  };
+}
 
-// =============================================
-// 2. INJECT STEALTH JS INTO PAGE CONTEXT
-// =============================================
-// Content scripts run in an isolated world. To override Navigator.prototype etc.,
-// we must inject into the MAIN world via a <script> tag.
-try {{
-  const script = document.createElement('script');
-  script.textContent = JSON.parse({encoded_stealth});
-  (document.head || document.documentElement).prepend(script);
-  script.remove();
-}} catch (e) {{
-  // CSP may block inline scripts on some pages — stealth won't apply there
-}}
+chrome.runtime.sendMessage({type: 'content_ready'});
 
-// =============================================
-// 3. SIGNAL READINESS
-// =============================================
-chrome.runtime.sendMessage({{type: 'content_ready'}});
+chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
+  var handler = async function() {
+    var method = msg.method;
+    var params = msg.params || {};
 
-// =============================================
-// 4. COMMAND HANDLER
-// =============================================
-chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {{
-  const handler = async () => {{
-    const {{method, params}} = msg;
-
-    switch (method) {{
+    switch (method) {
       case 'get_url':
-        return {{url: window.location.href}};
-
+        return {url: window.location.href};
       case 'get_title':
-        return {{title: document.title}};
-
+        return {title: document.title};
       case 'page_source':
-        return {{html: document.documentElement.outerHTML}};
-
-      case 'locate': {{
-        const el = document.querySelector(params.selector);
-        if (!el) return {{exists: false, visible: false, x: 0, y: 0, width: 0, height: 0}};
-        const visible = !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-        const coords = __getScreenCoords(el);
-        return {{
-          exists: true,
-          visible,
-          x: coords.x,
-          y: coords.y,
-          width: coords.width,
-          height: coords.height
-        }};
-      }}
-
-      case 'query': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
-        return {{
-          text: el.textContent || '',
-          tagName: el.tagName.toLowerCase(),
-          value: el.value || '',
-          visible: !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length),
-          attributes: Object.fromEntries(
-            Array.from(el.attributes).map(a => [a.name, a.value])
-          )
-        }};
-      }}
-
-      case 'query_all': {{
-        const els = document.querySelectorAll(params.selector);
-        return Array.from(els).map((el, index) => ({{
-          index,
-          text: el.textContent || '',
-          tagName: el.tagName.toLowerCase(),
-          value: el.value || '',
-          visible: !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length),
-          attributes: Object.fromEntries(
-            Array.from(el.attributes).map(a => [a.name, a.value])
-          )
-        }}));
-      }}
-
-      case 'wait_for': {{
-        const {{selector, timeout = 10000, visible = true}} = params;
-        const start = Date.now();
-        while (Date.now() - start < timeout) {{
-          const el = document.querySelector(selector);
-          if (el) {{
-            const isVisible = !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-            if (!visible || isVisible) {{
-              return {{
-                found: true,
-                text: el.textContent || '',
-                tagName: el.tagName.toLowerCase(),
-                value: el.value || '',
-                visible: isVisible,
-                attributes: Object.fromEntries(
-                  Array.from(el.attributes).map(a => [a.name, a.value])
-                )
-              }};
-            }}
-          }}
-          await new Promise(r => setTimeout(r, 100));
-        }}
-        return {{found: false}};
-      }}
-
-      case 'scroll_to': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
-        el.scrollIntoView({{behavior: 'smooth', block: 'center'}});
-        await new Promise(r => setTimeout(r, 300));
-        return {{ok: true}};
-      }}
-
-      case 'fill_fast': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
+        return {html: document.documentElement.outerHTML};
+      case 'locate': {
+        var el = document.querySelector(params.selector);
+        if (!el) return {exists: false, visible: false, x: 0, y: 0, width: 0, height: 0};
+        var vis = !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+        var coords = __getScreenCoords(el);
+        return {exists: true, visible: vis, x: coords.x, y: coords.y, width: coords.width, height: coords.height};
+      }
+      case 'query': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
+        return {text: el.textContent||'', tagName: el.tagName.toLowerCase(), value: el.value||'',
+          visible: !!(el.offsetWidth||el.offsetHeight||el.getClientRects().length),
+          attributes: Object.fromEntries(Array.from(el.attributes).map(function(a){return [a.name,a.value]}))};
+      }
+      case 'query_all': {
+        var els = document.querySelectorAll(params.selector);
+        return Array.from(els).map(function(el, i) {
+          return {index:i, text:el.textContent||'', tagName:el.tagName.toLowerCase(), value:el.value||'',
+            visible:!!(el.offsetWidth||el.offsetHeight||el.getClientRects().length),
+            attributes:Object.fromEntries(Array.from(el.attributes).map(function(a){return [a.name,a.value]}))};
+        });
+      }
+      case 'wait_for': {
+        var sel = params.selector, tmo = params.timeout||10000, wantVis = params.visible !== false;
+        var start = Date.now();
+        while (Date.now() - start < tmo) {
+          var el = document.querySelector(sel);
+          if (el) {
+            var isVis = !!(el.offsetWidth||el.offsetHeight||el.getClientRects().length);
+            if (!wantVis || isVis) {
+              return {found:true, text:el.textContent||'', tagName:el.tagName.toLowerCase(),
+                value:el.value||'', visible:isVis,
+                attributes:Object.fromEntries(Array.from(el.attributes).map(function(a){return [a.name,a.value]}))};
+            }
+          }
+          await new Promise(function(r){setTimeout(r,100)});
+        }
+        return {found: false};
+      }
+      case 'scroll_to': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
+        el.scrollIntoView({behavior:'smooth', block:'center'});
+        await new Promise(function(r){setTimeout(r,300)});
+        return {ok: true};
+      }
+      case 'fill_fast': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
         el.focus();
         el.value = params.value;
-        el.dispatchEvent(new Event('input', {{bubbles: true}}));
-        el.dispatchEvent(new Event('change', {{bubbles: true}}));
-        return {{ok: true}};
-      }}
-
-      case 'focus': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
+        el.dispatchEvent(new Event('input', {bubbles:true}));
+        el.dispatchEvent(new Event('change', {bubbles:true}));
+        return {ok: true};
+      }
+      case 'focus': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
         el.focus();
-        return {{ok: true}};
-      }}
-
-      case 'is_visible': {{
-        const el = document.querySelector(params.selector);
-        return {{visible: el ? !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length) : false}};
-      }}
-
-      case 'exists': {{
-        return {{exists: !!document.querySelector(params.selector)}};
-      }}
-
-      case 'get_text': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
-        return {{text: el.textContent || ''}};
-      }}
-
-      case 'get_attribute': {{
-        const el = document.querySelector(params.selector);
-        if (!el) throw new Error(`No element matches selector: ${{params.selector}}`);
-        return {{value: el.getAttribute(params.attribute)}};
-      }}
-
-      case 'wait_for_url': {{
-        const {{substring, timeout = 30000}} = params;
-        const start = Date.now();
-        while (Date.now() - start < timeout) {{
-          if (window.location.href.includes(substring)) {{
-            return {{matched: true, url: window.location.href}};
-          }}
-          await new Promise(r => setTimeout(r, 100));
-        }}
-        return {{matched: false, url: window.location.href}};
-      }}
-
-      case 'wait_for_text': {{
-        const {{selector, text, timeout = 10000}} = params;
-        const start = Date.now();
-        while (Date.now() - start < timeout) {{
-          const el = document.querySelector(selector);
-          if (el && (el.textContent || '').includes(text)) {{
-            return {{found: true}};
-          }}
-          await new Promise(r => setTimeout(r, 100));
-        }}
-        return {{found: false}};
-      }}
-
+        return {ok: true};
+      }
+      case 'is_visible': {
+        var el = document.querySelector(params.selector);
+        return {visible: el ? !!(el.offsetWidth||el.offsetHeight||el.getClientRects().length) : false};
+      }
+      case 'exists':
+        return {exists: !!document.querySelector(params.selector)};
+      case 'get_text': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
+        return {text: el.textContent||''};
+      }
+      case 'get_attribute': {
+        var el = document.querySelector(params.selector);
+        if (!el) throw new Error('No element: ' + params.selector);
+        return {value: el.getAttribute(params.attribute)};
+      }
+      case 'wait_for_url': {
+        var sub = params.substring, tmo = params.timeout||30000, start = Date.now();
+        while (Date.now() - start < tmo) {
+          if (window.location.href.includes(sub)) return {matched:true, url:window.location.href};
+          await new Promise(function(r){setTimeout(r,100)});
+        }
+        return {matched:false, url:window.location.href};
+      }
+      case 'wait_for_text': {
+        var sel = params.selector, txt = params.text, tmo = params.timeout||10000, start = Date.now();
+        while (Date.now() - start < tmo) {
+          var el = document.querySelector(sel);
+          if (el && (el.textContent||'').includes(txt)) return {found:true};
+          await new Promise(function(r){setTimeout(r,100)});
+        }
+        return {found:false};
+      }
       default:
-        throw new Error(`Unknown content method: ${{method}}`);
-    }}
-  }};
-
-  handler().then(sendResponse).catch(err => {{
-    sendResponse({{__error: true, code: 'CONTENT_ERROR', message: err.message}});
-  }});
-  return true; // Keep sendResponse channel open for async
-}});
-'''
+        throw new Error('Unknown method: ' + method);
+    }
+  };
+  handler().then(sendResponse).catch(function(err) {
+    sendResponse({__error:true, code:'CONTENT_ERROR', message:err.message});
+  });
+  return true;
+});
+""".strip()
