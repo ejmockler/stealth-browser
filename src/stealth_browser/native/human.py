@@ -116,7 +116,7 @@ def move_to(
     # --- Generate path points ---
     # ~60 Hz update rate (matching typical display refresh)
     n_points = max(8, int(duration / 0.016))
-    noise_scale = 0.004  # signal-dependent noise: ~0.4% of velocity (sub-pixel tremor)
+    noise_scale = 0.001  # signal-dependent noise: ~0.1% of velocity (sub-pixel tremor)
 
     prev_x, prev_y = float(from_x), float(from_y)
 
@@ -152,9 +152,9 @@ def move_to(
         time.sleep(duration / n_points)
 
     # --- Corrective sub-movement ---
-    # Humans overshoot slightly ~40% of the time, then correct.
-    if uniform(0, 1) < 0.4 and distance > 30:
-        overshoot = uniform(3, 8)
+    # Humans overshoot slightly ~60% of the time, then correct.
+    if uniform(0, 1) < 0.6 and distance > 30:
+        overshoot = uniform(2, 5)
         ox = to_x + int(dx / distance * overshoot)
         oy = to_y + int(dy / distance * overshoot)
         backend.mouse_move(ox, oy)

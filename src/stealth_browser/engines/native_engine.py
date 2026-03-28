@@ -224,15 +224,16 @@ class NativeEngine:
         human_typing: bool = True,
         timeout: float = 10,
     ) -> None:
-        # Click to focus
-        self.click_element(selector, timeout=timeout)
-        time.sleep(0.1)
+        self.wait_for_element(selector, timeout=timeout)
 
         if clear:
-            select_all(self._backend)
-            time.sleep(0.05)
-            press_key(self._backend, "Backspace")
-            time.sleep(0.05)
+            # JS clear is reliable and instant; OS input for typing is what
+            # matters for detection evasion.
+            self._bridge.send("fill_fast", {"selector": selector, "value": ""})
+
+        # Click to focus, then pause for focus to settle
+        self.click_element(selector, timeout=timeout)
+        time.sleep(0.15)
 
         if human_typing:
             type_text(self._backend, value)

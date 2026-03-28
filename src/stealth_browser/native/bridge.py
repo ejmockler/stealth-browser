@@ -161,7 +161,11 @@ class ExtensionBridge:
         self._closed = True
 
         if self._loop and not self._loop.is_closed():
-            asyncio.run_coroutine_threadsafe(self._shutdown(), self._loop)
+            future = asyncio.run_coroutine_threadsafe(self._shutdown(), self._loop)
+            try:
+                future.result(timeout=3)
+            except Exception:
+                pass
             self._loop.call_soon_threadsafe(self._loop.stop)
 
         if self._thread:
