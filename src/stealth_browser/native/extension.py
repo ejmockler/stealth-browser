@@ -94,20 +94,50 @@ _BG_TEMPLATE = r"""
 var activeTabId = null;
 var readyTabs = new Set();
 
-// --- Create the offscreen document for persistent WebSocket ---
+// --- WebSocket connection ---
+// Try offscreen document first (persistent). If offscreen API is blocked
+// (snap Chromium, older Chrome), fall back to direct SW WebSocket.
+var wsReady = false;
+
 async function ensureOffscreen() {
-  var contexts = await chrome.runtime.getContexts({
-    contextTypes: ['OFFSCREEN_DOCUMENT']
-  });
-  if (contexts.length === 0) {
-    await chrome.offscreen.createDocument({
-      url: 'offscreen.html',
-      reasons: ['WORKERS'],
-      justification: 'Maintain WebSocket connection'
+  if (typeof chrome.offscreen === 'undefined') return false;
+  try {
+    var contexts = await chrome.runtime.getContexts({
+      contextTypes: ['OFFSCREEN_DOCUMENT']
     });
+    if (contexts.length === 0) {
+      await chrome.offscreen.createDocument({
+        url: 'offscreen.html',
+        reasons: ['WORKERS'],
+        justification: 'Maintain WebSocket connection'
+      });
+    }
+    return true;
+  } catch(e) {
+    return false;
   }
 }
-ensureOffscreen();
+
+// Direct SW WebSocket fallback (used when offscreen is unavailable)
+var swWs = null;
+function connectDirectWs() {
+  swWs = new WebSocket('ws://127.0.0.1:' + __WS_PORT__);
+  swWs.onopen = function() { wsReady = true; };
+  swWs.onmessage = function(event) {
+    var msg = JSON.parse(event.data);
+    handleCommand(msg).then(function(result) {
+      swWs.send(JSON.stringify({id: msg.id, result: result}));
+    }).catch(function(err) {
+      swWs.send(JSON.stringify({id: msg.id, error: {code: 'ERROR', message: err.message}}));
+    });
+  };
+  swWs.onclose = function() { wsReady = false; setTimeout(connectDirectWs, 1000); };
+  swWs.onerror = function() {};
+}
+
+ensureOffscreen().then(function(ok) {
+  if (!ok) connectDirectWs();
+});
 
 // --- Register stealth JS in MAIN world (bypasses CSP) ---
 // <script> tag injection from content scripts is blocked by CSP on many sites.
@@ -126,7 +156,11 @@ chrome.scripting.registerContentScripts([{
 
 // Keepalive to prevent SW termination
 chrome.alarms.create('keepalive', {periodInMinutes: 0.25});
-chrome.alarms.onAlarm.addListener(function() { ensureOffscreen(); });
+chrome.alarms.onAlarm.addListener(function() {
+  ensureOffscreen().then(function(ok) {
+    if (!ok && !wsReady) connectDirectWs();
+  });
+});
 
 // Track active tab
 chrome.tabs.onActivated.addListener(function(info) { activeTabId = info.tabId; });
