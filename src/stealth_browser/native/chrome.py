@@ -32,11 +32,13 @@ _MACOS_PATHS = [
 ]
 
 _LINUX_WHICH_NAMES = [
-    "google-chrome",
-    "google-chrome-stable",
     "chromium-browser",
     "chromium",
+    "google-chrome-stable",
+    "google-chrome",
 ]
+
+_LINUX_SNAP = "/snap/bin/chromium"
 
 _LINUX_FALLBACK = "/usr/bin/google-chrome"
 
@@ -85,11 +87,21 @@ def _find_playwright_chrome() -> Optional[str]:
 def find_chrome() -> str:
     """Find the Chrome binary on the system.
 
+    Respects the ``STEALTH_CHROME_PATH`` environment variable for explicit
+    override (useful for snap Chromium, custom builds, CI).
+
     Returns the absolute path to the Chrome executable.
 
     Raises:
         BrowserError: If Chrome cannot be found on this system.
     """
+    env_path = os.environ.get("STEALTH_CHROME_PATH")
+    if env_path:
+        if os.path.isfile(env_path) and os.access(env_path, os.X_OK):
+            logger.info("Using STEALTH_CHROME_PATH: %s", env_path)
+            return env_path
+        raise BrowserError(f"STEALTH_CHROME_PATH is set but not executable: {env_path}")
+
     if sys.platform == "darwin":
         return _find_chrome_macos()
     elif sys.platform == "win32":
@@ -153,11 +165,17 @@ def _find_chrome_windows() -> str:
 
 
 def _find_chrome_linux() -> str:
+    # Prefer Chromium (supports --load-extension) over retail Chrome (blocks it)
     for name in _LINUX_WHICH_NAMES:
         path = shutil.which(name)
         if path:
             logger.info("Found Chrome at %s", path)
             return path
+
+    # Snap Chromium
+    if os.path.isfile(_LINUX_SNAP) and os.access(_LINUX_SNAP, os.X_OK):
+        logger.info("Found snap Chromium at %s", _LINUX_SNAP)
+        return _LINUX_SNAP
 
     if os.path.isfile(_LINUX_FALLBACK):
         logger.info("Found Chrome at %s", _LINUX_FALLBACK)
@@ -169,7 +187,7 @@ def _find_chrome_linux() -> str:
         return cft
 
     raise BrowserError(
-        "Chrome not found. Install google-chrome, chromium, or run: "
+        "Chrome not found. Install chromium, google-chrome, or run: "
         "npx @playwright/test install chromium"
     )
 
@@ -255,6 +273,10 @@ def launch_chrome(
         f"--load-extension={extension_dir}",
         f"--user-data-dir={user_data_dir}",
     ]
+
+    # Snap-confined Chromium requires --no-sandbox (snap's own sandbox applies)
+    if "snap" in chrome_path:
+        args.append("--no-sandbox")
 
     if extra_args:
         args.extend(extra_args)
